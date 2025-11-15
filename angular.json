@@ -39,7 +39,7 @@
           "builder": "@angular/build:application",
           "options": {
             "outputPath": {
-              "base": "../dist",
+              "base": "dist",
               "browser": ""
             },
             "browser": "src/main.ts",
@@ -55,7 +55,8 @@
             ],
             "styles": [
               "src/styles.css"
-            ]
+            ],
+            "webWorkerTsConfig": "tsconfig.worker.json"
           },
           "configurations": {
             "production": {
@@ -112,7 +113,8 @@
             ],
             "styles": [
               "src/styles.css"
-            ]
+            ],
+            "webWorkerTsConfig": "tsconfig.worker.json"
           }
         }
       }
