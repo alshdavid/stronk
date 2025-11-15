@@ -1,0 +1,9 @@
+{
+  "name": "strong-workspace",
+  "workspaces": [
+    "stronk"
+  ],
+  "scripts": {
+    "build": ""
+  }
+}
