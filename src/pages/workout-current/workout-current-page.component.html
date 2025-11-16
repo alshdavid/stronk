@@ -1,7 +1,10 @@
 <section class="workout-title" (click)="openPanel()">Current Exercise</section>
 
-<section class="workout">
+<section class="workout-body">
   <nav>
-    <button (click)="closePanel()">Hide</button>
+    <button (click)="closePanel()">
+      <img src="icons/chevron-down.svg" />
+    </button>
+    <button class="finish" (click)="closePanel()">FINISH</button>
   </nav>
 </section>

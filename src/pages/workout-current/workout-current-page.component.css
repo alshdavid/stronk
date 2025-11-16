@@ -9,7 +9,6 @@
   height: calc(100dvh + var(--height-peak));
   transform: translateY(100%);
   z-index: 3;
-  background-color: var(--color-blue-grey-850);
   transition: transform ease-in-out 0.25s;
 
   &.hasWorkout {
@@ -35,11 +34,35 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--color-blue-grey-850);
   }
 }
 
-nav {
-  button {
-    background-color: transparent;
+.workout-body {
+  background-color: var(--color-blue-grey-900);
+  height: 100dvh;
+
+  nav {
+    background-color: var(--color-blue-grey-850);
+    height: var(--height-top-nav);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      background-color: transparent;
+      border: none;
+      padding: 0 12px;
+
+      img {
+        width: 20px;
+      }
+
+      &.finish {
+        color: var(--color-blue-300);
+        letter-spacing: 0.8px;
+        font-size: 13px;
+      }
+    }
   }
 }
