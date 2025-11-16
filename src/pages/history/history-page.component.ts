@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Workout, WorkoutSet, WorkoutsService } from '../../services/workouts.service';
+import { formatDate } from '../../utils/dates';
 
 @Component({
   standalone: false,
@@ -15,6 +16,8 @@ export class HistoryPageComponent implements OnInit {
     this.#workoutsService = workoutsService;
     this.workouts = [];
   }
+
+  formatDate = formatDate;
 
   async ngOnInit() {
     this.workouts = await Array.fromAsync(this.#workoutsService.listWorkouts());

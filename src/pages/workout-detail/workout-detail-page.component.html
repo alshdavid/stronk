@@ -3,11 +3,11 @@
   <div><img src="icons/ellipsis-vertical.svg" /></div>
 </app-navigation-top>
 
-<div class="content-max-width">
+<div class="content-max-width" *ngIf="workout !== null">
   <h1>{{ workout?.title }}</h1>
-  <time>{{ workout?.date }}</time>
+  <time [attr.datetime]="workout.date">{{ formatDate(workout.date) }}</time>
 
-  <article *ngFor="let exercise of workout?.exercises || []">
+  <article *ngFor="let exercise of workout.exercises || []">
     <div class="entry title">
       <div>{{ exercise.name }}</div>
       <div>1RM</div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Workout, WorkoutsService } from '../../services/workouts.service';
 import { ActivatedRoute } from '@angular/router';
 import { BottomNavService } from '../../services/bottom-nav.service';
+import { formatDate } from '../../utils/dates';
 
 @Component({
   standalone: false,
@@ -29,6 +30,8 @@ export class WorkoutDetailPageComponent implements OnInit {
     this.workout = null;
     this.#bottomNavService = bottomNavService;
   }
+
+  formatDate = formatDate;
 
   async ngOnInit() {
     this.#bottomNavService.disable();

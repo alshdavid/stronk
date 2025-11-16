@@ -5,7 +5,7 @@
 <div class="content-max-width">
   <div class="exercise" *ngFor="let workout of workouts" [routerLink]="'/workout/' + workout.id">
     <h1>{{ workout.title || 'Unnamed Workout' }}</h1>
-    <time [attr.datetime]="workout.date">{{ workout.date }}</time>
+    <time [attr.datetime]="workout.date">{{ formatDate(workout.date) }}</time>
 
     <div class="breakdown">
       <div class="title">
