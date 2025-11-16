@@ -1,0 +1,14 @@
+.boundary {
+  height: 48px;
+}
+
+nav {
+  display: block;
+  height: 48px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25), 0 0 0px rgba(0,0,0, 0.31);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-blue-grey-900);
+}

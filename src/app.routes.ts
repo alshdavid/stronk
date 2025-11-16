@@ -1,11 +1,40 @@
 import { Routes } from '@angular/router';
-import { HomePageComponent } from './pages/home/home.component';
+import { ProfilePageComponent } from './pages/profile/profile-page.component';
+import { ExercisesPageComponent } from './pages/exercises/exercises-page.component';
+import { HistoryPageComponent } from './pages/history/history-page.component';
+import { MeasurePageComponent } from './pages/measure/measure-page.component';
+import { WorkoutPageComponent } from './pages/workout/workout-page.component';
 
 export const routes: Routes = [
+  { path : '', redirectTo: 'profile', pathMatch: 'full' },
   {
-    title: "Home Page",
+    title: "Exercises",
     pathMatch: 'full',
-    path: '',
-    component: HomePageComponent,
-  }
+    path: 'exercises',
+    component: ExercisesPageComponent,
+  },
+  {
+    title: "History",
+    pathMatch: 'full',
+    path: 'history',
+    component: HistoryPageComponent,
+  },
+  {
+    title: "Measure",
+    pathMatch: 'full',
+    path: 'measure',
+    component: MeasurePageComponent,
+  },
+  {
+    title: "Profile",
+    pathMatch: 'full',
+    path: 'profile',
+    component: ProfilePageComponent,
+  },
+  {
+    title: "Workout",
+    pathMatch: 'full',
+    path: 'workout',
+    component: WorkoutPageComponent,
+  },
 ];
