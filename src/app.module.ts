@@ -8,8 +8,8 @@ import { AppComponent } from './app.component';
 
 import { BottomNavService } from './services/bottom-nav.service';
 
-import { NavComponent } from './partials/nav/nav.component';
 import { BottomNavComponent } from './partials/bottom-nav/bottom-nav.component';
+import { TopNavComponent } from './partials/top-nav/top-nav.component';
 
 import { ProfilePageComponent } from './pages/profile/profile-page.component';
 import { ExercisesPageComponent } from './pages/exercises/exercises-page.component';
@@ -20,7 +20,7 @@ import { WorkoutPageComponent } from './pages/workout/workout-page.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
+    TopNavComponent,
     BottomNavComponent,
     ProfilePageComponent,
     ExercisesPageComponent,

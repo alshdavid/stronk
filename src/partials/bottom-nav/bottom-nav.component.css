@@ -17,7 +17,6 @@ nav {
 }
 
 button {
-  transition: opacity ease-in-out 0.15s;
   opacity: 0.5;
   width: calc(100vw / 5);
   height: 100%;
