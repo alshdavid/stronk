@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { BackgroundWorkerService } from './services/background-worker.service';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { routes } from './app.routes';
 import { AppComponent } from './app.component';
@@ -26,6 +27,7 @@ import { HistoryPageNavComponent } from './pages/history/history-nav.component';
 import { MeasurePageNavComponent } from './pages/measure/measure-nav.component';
 import { WorkoutPageNavComponent } from './pages/workout/workout-nav.component';
 import { WorkoutCurrentPageComponent } from './pages/workout-current/workout-current-page.component';
+import { StorageService } from './services/storage.service';
 
 @NgModule({
   declarations: [
@@ -50,8 +52,9 @@ import { WorkoutCurrentPageComponent } from './pages/workout-current/workout-cur
     TopNavService,
     CurrentWorkoutPanelService,
     CurrentWorkoutService,
+    StorageService,
   ],
-  imports: [BrowserModule, CommonModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, CommonModule, FormsModule, RouterModule.forRoot(routes)],
   bootstrap: [AppComponent],
 })
 export class AppModule {

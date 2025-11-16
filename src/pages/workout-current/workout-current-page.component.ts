@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BottomNavService } from '../../services/bottom-nav.service';
 import { TopNavService } from '../../services/top-nav.service';
 import { CurrentWorkoutPanelService } from '../../services/current-workout-panel.service';
-import { CurrentWorkoutService } from '../../services/current-workout.service';
+import { CurrentWorkoutService, Workout } from '../../services/current-workout.service';
 
 @Component({
   standalone: false,
@@ -17,12 +17,20 @@ export class WorkoutCurrentPageComponent {
   currentWorkoutPanelService: CurrentWorkoutPanelService;
   #currentWorkoutService: CurrentWorkoutService;
 
+  get workout(): Workout | null {
+    return this.#currentWorkoutService.workout;
+  }
+
   constructor(
     currentWorkoutPanelService: CurrentWorkoutPanelService,
     currentWorkoutService: CurrentWorkoutService,
   ) {
     this.currentWorkoutPanelService = currentWorkoutPanelService;
     this.#currentWorkoutService = currentWorkoutService;
+  }
+
+  sync() {
+    this.#currentWorkoutService.sync();
   }
 
   openPanel() {
@@ -33,8 +41,25 @@ export class WorkoutCurrentPageComponent {
     this.currentWorkoutPanelService.closePanel();
   }
 
-  finishWorkout() {
-    this.#currentWorkoutService.workout = null;
+  async finishWorkout() {
+    await this.#currentWorkoutService.saveWorkout();
     this.currentWorkoutPanelService.closePanel();
+  }
+
+  async cancelWorkout() {
+    await this.#currentWorkoutService.discardWorkout();
+    this.currentWorkoutPanelService.closePanel();
+  }
+
+  addExercise() {
+    this.#currentWorkoutService.addExercise();
+  }
+
+  removeExercise(index: number) {
+    this.#currentWorkoutService.removeExercise(index);
+  }
+
+  addSet(index: number) {
+    this.#currentWorkoutService.addSet(index);
   }
 }

@@ -1,7 +1,5 @@
 :host {
   --height-peak: 70px;
-
-  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -18,12 +16,12 @@
   &.open {
     transform: translateY(calc(0% - var(--height-peak)));
 
-    .workout-title {
+    .workout-peak {
       opacity: 0;
     }
   }
 
-  .workout-title {
+  .workout-peak {
     box-shadow:
       0 -1px 5px rgba(0, 0, 0, 0.15),
       0 0 0px rgba(0, 0, 0, 0.2);
@@ -36,6 +34,17 @@
     align-items: center;
     background-color: var(--color-blue-grey-850);
   }
+}
+
+input[type='number'],
+input[type='text'] {
+  background-color: var(--color-blue-grey-850);
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 8px;
+  display: block;
+  flex: 1;
 }
 
 .workout-body {
@@ -65,4 +74,82 @@
       }
     }
   }
+}
+
+.exercise {
+  margin: 12px 0;
+
+  &:last-of-type {
+    margin: 12px 0 0 0;
+  }
+}
+
+.exercise-name {
+  display: flex;
+  margin-bottom: 12px;
+
+  button {
+    background-color: var(--color-red-600);
+    border: none;
+    border-radius: 4px;
+    width: 30px;
+    margin-right: 12px;
+  }
+}
+
+.set {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-red-600);
+    border: none;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .set-num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+  }
+
+  input[type='number'] {
+    text-align: center;
+    width: 100%;
+    background-color: var(--color-blue-grey-850);
+    border: none;
+    border-radius: 4px;
+    margin-right: 12px;
+    padding: 8px 8px;
+    display: block;
+    flex: 1;
+  }
+}
+
+button.add-exercise,
+button.add-set,
+button.cancel-workout {
+  display: block;
+  width: 100%;
+  text-align: center;
+  border: none;
+  background: transparent;
+  color: var(--color-blue-300);
+  letter-spacing: 0.8px;
+  font-size: 13px;
+  padding: 12px 0;
+  font-weight: 600;
+}
+
+button.cancel-workout {
+  color: var(--color-red-300);
 }

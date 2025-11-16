@@ -41,8 +41,6 @@ export class CurrentWorkoutPanelService {
     this.hasWorkout = !!this.#currentWorkoutService.workout;
     if (globalThis.location.hash.includes('currentWorkoutOpen=true')) {
       if (!this.#currentWorkoutService.workout) {
-        globalThis.history.back();
-        globalThis.history.back();
         return false;
       }
       this.openPanel();

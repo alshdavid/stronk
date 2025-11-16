@@ -1,4 +1,4 @@
-<section class="workout-title" (click)="openPanel()">Current Exercise</section>
+<section class="workout-peak" (click)="openPanel()">Current Exercise</section>
 
 <section class="workout-body">
   <nav>
@@ -7,4 +7,31 @@
     </button>
     <button class="finish" (click)="finishWorkout()">FINISH</button>
   </nav>
+
+  <div *ngIf="workout" class="content-max-width">
+    <input placeholder="Workout Name" (input)="sync()" type="text" [(ngModel)]="workout.title" />
+
+    <article class="exercise" *ngFor="let exercise of workout?.exercises || []; let i = index">
+      <div class="exercise-name">
+        <button (click)="removeExercise(i)">X</button>
+        <input
+          type="text"
+          placeholder="Exercise Name"
+          (input)="sync()"
+          [(ngModel)]="exercise.name"
+        />
+      </div>
+      <div class="set" *ngFor="let set of exercise.sets; let i = index">
+        <button class="remove-set" (click)="removeExercise(i)">X</button>
+        <div class="set-num">{{ i + 1 }}</div>
+        <input (input)="sync()" type="number" placeholder="0" [(ngModel)]="set.reps" />
+        <input (input)="sync()" type="checkbox" [(ngModel)]="set.done" />
+      </div>
+      <button class="add-set" (click)="addSet(i)">ADD SET</button>
+    </article>
+
+    <button class="add-exercise" (click)="addExercise()">ADD EXERCISE</button>
+
+    <button class="cancel-workout" (click)="cancelWorkout()">CANCEL WORKOUT</button>
+  </div>
 </section>
