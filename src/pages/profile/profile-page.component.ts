@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BottomNavService } from '../../services/bottom-nav.service';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   standalone: false,
@@ -8,13 +9,14 @@ import { BottomNavService } from '../../services/bottom-nav.service';
   styleUrl: './profile-page.component.css',
 })
 export class ProfilePageComponent {
-  #bottomNavService: BottomNavService;
+  #storageService: StorageService;
 
-  constructor(bottomNavService: BottomNavService) {
-    this.#bottomNavService = bottomNavService;
+  constructor(storageService: StorageService) {
+    this.#storageService = storageService;
   }
 
-  toggle() {
-    this.#bottomNavService.toggle();
+  async clearStorage() {
+    await this.#storageService.clear();
+    globalThis.localStorage.clear();
   }
 }

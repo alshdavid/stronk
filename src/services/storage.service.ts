@@ -15,6 +15,10 @@ export class StorageService {
     return this.#db.listItems();
   }
 
+  clear(): Promise<void> {
+    return this.#db.clear();
+  }
+
   getItem<T extends string | ArrayBuffer | unknown = unknown>(key: string): Promise<T | null> {
     return this.#db.getItem<T>(key);
   }
@@ -56,6 +60,28 @@ export class Connection {
     return new Promise<string[]>(async (resolve, reject) => {
       gRequest.onsuccess = () => {
         resolve(gRequest.result as string[]);
+      };
+
+      gRequest.onerror = () => {
+        reject(gRequest.error);
+      };
+    });
+  }
+
+  async clear(): Promise<void> {
+    const db = await this.#getDb();
+
+    const tx = db.transaction(this.#storeKey, 'readwrite');
+    const st = tx.objectStore(this.#storeKey);
+    const gRequest = st.clear();
+
+    return new Promise<any>(async (resolve, reject) => {
+      gRequest.onsuccess = () => {
+        if (gRequest.result === undefined) {
+          resolve(null);
+        } else {
+          resolve(gRequest.result);
+        }
       };
 
       gRequest.onerror = () => {
