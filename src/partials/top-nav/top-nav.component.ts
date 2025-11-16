@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TopNavService } from '../../services/top-nav.service';
 
 @Component({
   standalone: false,
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './top-nav.component.css'
 })
 export class TopNavComponent {
+  topNavService: TopNavService
+
+  constructor(
+    topNavService: TopNavService
+  ) {
+    this.topNavService = topNavService
+  }
 }

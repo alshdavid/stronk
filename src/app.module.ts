@@ -7,6 +7,7 @@ import { routes } from './app.routes';
 import { AppComponent } from './app.component';
 
 import { BottomNavService } from './services/bottom-nav.service';
+import { TopNavService } from './services/top-nav.service';
 
 import { BottomNavComponent } from './partials/bottom-nav/bottom-nav.component';
 import { TopNavComponent } from './partials/top-nav/top-nav.component';
@@ -31,6 +32,7 @@ import { WorkoutPageComponent } from './pages/workout/workout-page.component';
   providers: [
     BackgroundWorkerService,
     BottomNavService,
+    TopNavService,
   ],
   imports: [
     BrowserModule,

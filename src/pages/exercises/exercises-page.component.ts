@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TopNavService } from '../../services/top-nav.service';
 
 @Component({
   standalone: false,
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   templateUrl: './exercises-page.component.html',
   styleUrl: './exercises-page.component.css'
 })
-export class ExercisesPageComponent {
+export class ExercisesPageComponent implements OnInit {
+  topNavService: TopNavService
+
+  constructor(
+    topNavService: TopNavService
+  ) {
+    this.topNavService = topNavService
+  }
+
+  ngOnInit() {
+    this.topNavService.updateTitle('Exercises')
+  }
 }

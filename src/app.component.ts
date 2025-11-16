@@ -14,8 +14,6 @@ import { BottomNavService } from './services/bottom-nav.service';
   `,
 })
 export class AppComponent {
-  hide: boolean = false
-
   bottomNavService: BottomNavService
 
   constructor(
