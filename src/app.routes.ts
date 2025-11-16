@@ -6,33 +6,33 @@ import { MeasurePageComponent } from './pages/measure/measure-page.component';
 import { WorkoutPageComponent } from './pages/workout/workout-page.component';
 
 export const routes: Routes = [
-  { path : '', redirectTo: 'profile', pathMatch: 'full' },
+  { path: '', redirectTo: 'profile', pathMatch: 'full' },
   {
-    title: "Exercises",
+    title: 'Exercises',
     pathMatch: 'full',
     path: 'exercises',
     component: ExercisesPageComponent,
   },
   {
-    title: "History",
+    title: 'History',
     pathMatch: 'full',
     path: 'history',
     component: HistoryPageComponent,
   },
   {
-    title: "Measure",
+    title: 'Measure',
     pathMatch: 'full',
     path: 'measure',
     component: MeasurePageComponent,
   },
   {
-    title: "Profile",
+    title: 'Profile',
     pathMatch: 'full',
     path: 'profile',
     component: ProfilePageComponent,
   },
   {
-    title: "Workout",
+    title: 'Workout',
     pathMatch: 'full',
     path: 'workout',
     component: WorkoutPageComponent,

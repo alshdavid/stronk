@@ -4,21 +4,17 @@ import { BottomNavService } from './services/bottom-nav.service';
 @Component({
   standalone: false,
   selector: 'app-root',
-  styles: `
-
-  `,
-  template: /*html*/`
+  styles: ``,
+  template: /*html*/ `
     <app-navigation-top></app-navigation-top>
     <router-outlet></router-outlet>
-    <app-navigation-bottom [ngClass]="{hide: !bottomNavService.visible}"></app-navigation-bottom>
+    <app-navigation-bottom [ngClass]="{ hide: !bottomNavService.visible }"></app-navigation-bottom>
   `,
 })
 export class AppComponent {
-  bottomNavService: BottomNavService
+  bottomNavService: BottomNavService;
 
-  constructor(
-    bottomNavService: BottomNavService
-  ) {
-    this.bottomNavService = bottomNavService
+  constructor(bottomNavService: BottomNavService) {
+    this.bottomNavService = bottomNavService;
   }
 }

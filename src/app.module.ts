@@ -13,10 +13,15 @@ import { BottomNavComponent } from './partials/bottom-nav/bottom-nav.component';
 import { TopNavComponent } from './partials/top-nav/top-nav.component';
 
 import { ProfilePageComponent } from './pages/profile/profile-page.component';
+import { ProfilePageNavComponent } from './pages/profile/profile-nav.component';
 import { ExercisesPageComponent } from './pages/exercises/exercises-page.component';
 import { HistoryPageComponent } from './pages/history/history-page.component';
 import { MeasurePageComponent } from './pages/measure/measure-page.component';
 import { WorkoutPageComponent } from './pages/workout/workout-page.component';
+import { ExercisesPageNavComponent } from './pages/exercises/exercises-nav.component';
+import { HistoryPageNavComponent } from './pages/history/history-nav.component';
+import { MeasurePageNavComponent } from './pages/measure/measure-nav.component';
+import { WorkoutPageNavComponent } from './pages/workout/workout-nav.component';
 
 @NgModule({
   declarations: [
@@ -24,26 +29,20 @@ import { WorkoutPageComponent } from './pages/workout/workout-page.component';
     TopNavComponent,
     BottomNavComponent,
     ProfilePageComponent,
+    ProfilePageNavComponent,
     ExercisesPageComponent,
+    ExercisesPageNavComponent,
     HistoryPageComponent,
+    HistoryPageNavComponent,
     MeasurePageComponent,
+    MeasurePageNavComponent,
     WorkoutPageComponent,
+    WorkoutPageNavComponent,
   ],
-  providers: [
-    BackgroundWorkerService,
-    BottomNavService,
-    TopNavService,
-  ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes),
-  ],
-  bootstrap: [
-    AppComponent,
-  ],
+  providers: [BackgroundWorkerService, BottomNavService, TopNavService],
+  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  bootstrap: [AppComponent],
 })
 export class AppModule {
-  constructor(
-    _workerService: BackgroundWorkerService,
-  ) {}
+  constructor(_workerService: BackgroundWorkerService) {}
 }

@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./css/colors.css";
+@import './css/colors.css';
 
-body, html {
+body,
+html {
   background-color: var(--color-blue-grey-900);
   color: white;
   margin: 0;
@@ -10,6 +11,8 @@ body, html {
 
 * {
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji';
   text-rendering: optimizeLegibility;
 }
