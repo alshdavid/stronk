@@ -1,4 +1,6 @@
 :root {
+  --height-bottom-nav: 80px;
+
   --color-red-50: #ffebee;
   --color-red-100: #ffcdd2;
   --color-red-200: #ef9a9a;

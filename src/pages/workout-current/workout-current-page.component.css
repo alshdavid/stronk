@@ -1,0 +1,45 @@
+:host {
+  --height-peak: 70px;
+
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(100vh + var(--height-peak));
+  transform: translateY(100%);
+  z-index: 3;
+  background-color: var(--color-blue-grey-900);
+  transition: transform ease-in-out 0.25s;
+
+  &.hasWorkout {
+    transform: translateY(calc(100vh - calc(var(--height-bottom-nav) + var(--height-peak))));
+  }
+
+  &.open {
+    transform: translateY(calc(0% - var(--height-peak)));
+
+    .workout-title {
+      opacity: 0;
+    }
+  }
+
+  .workout-title {
+    box-shadow:
+      0 -1px 5px rgba(0, 0, 0, 0.25),
+      0 0 0px rgba(0, 0, 0, 0.31);
+    transition: opacity ease-in-out 0.25s;
+    opacity: 1;
+    height: var(--height-peak);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+nav {
+  button {
+    background-color: transparent;
+  }
+}

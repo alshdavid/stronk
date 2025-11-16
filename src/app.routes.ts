@@ -4,6 +4,7 @@ import { ExercisesPageComponent } from './pages/exercises/exercises-page.compone
 import { HistoryPageComponent } from './pages/history/history-page.component';
 import { MeasurePageComponent } from './pages/measure/measure-page.component';
 import { WorkoutPageComponent } from './pages/workout/workout-page.component';
+import { WorkoutCurrentPageComponent } from './pages/workout-current/workout-current-page.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'profile', pathMatch: 'full' },
@@ -36,5 +37,11 @@ export const routes: Routes = [
     pathMatch: 'full',
     path: 'workout',
     component: WorkoutPageComponent,
+  },
+  {
+    title: 'Workout Current',
+    pathMatch: 'full',
+    path: 'workout-current',
+    component: WorkoutCurrentPageComponent,
   },
 ];

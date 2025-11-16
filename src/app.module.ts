@@ -22,6 +22,8 @@ import { ExercisesPageNavComponent } from './pages/exercises/exercises-nav.compo
 import { HistoryPageNavComponent } from './pages/history/history-nav.component';
 import { MeasurePageNavComponent } from './pages/measure/measure-nav.component';
 import { WorkoutPageNavComponent } from './pages/workout/workout-nav.component';
+import { WorkoutCurrentPageComponent } from './pages/workout-current/workout-current-page.component';
+import { CurrentWorkoutService } from './services/current-workout.service';
 
 @NgModule({
   declarations: [
@@ -38,8 +40,9 @@ import { WorkoutPageNavComponent } from './pages/workout/workout-nav.component';
     MeasurePageNavComponent,
     WorkoutPageComponent,
     WorkoutPageNavComponent,
+    WorkoutCurrentPageComponent,
   ],
-  providers: [BackgroundWorkerService, BottomNavService, TopNavService],
+  providers: [BackgroundWorkerService, BottomNavService, TopNavService, CurrentWorkoutService],
   imports: [BrowserModule, RouterModule.forRoot(routes)],
   bootstrap: [AppComponent],
 })
