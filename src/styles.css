@@ -6,7 +6,7 @@ html {
   background-color: var(--color-blue-grey-900);
   color: white;
   margin: 0;
-  height: 100vh;
+  height: 100dvh;
 }
 
 * {

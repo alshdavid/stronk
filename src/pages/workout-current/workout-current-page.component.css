@@ -6,14 +6,14 @@
   top: 0;
   left: 0;
   right: 0;
-  height: calc(100vh + var(--height-peak));
+  height: calc(100dvh + var(--height-peak));
   transform: translateY(100%);
   z-index: 3;
   background-color: var(--color-blue-grey-900);
   transition: transform ease-in-out 0.25s;
 
   &.hasWorkout {
-    transform: translateY(calc(100vh - calc(var(--height-bottom-nav) + var(--height-peak))));
+    transform: translateY(calc(100dvh - calc(var(--height-bottom-nav) + var(--height-peak))));
   }
 
   &.open {

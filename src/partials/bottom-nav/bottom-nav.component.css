@@ -1,11 +1,11 @@
 .bottom-nav-boundary {
   height: var(--height-bottom-nav);
   max-height: var(--height-bottom-nav);
-  transition: transform ease-in-out 0.15s;
+  transition: transform ease-in-out 0.25s;
 }
 
 nav {
-  transition: transform ease-in-out 0.15s;
+  transition: transform ease-in-out 0.25s;
   display: flex;
   height: var(--height-bottom-nav);
   box-shadow:
