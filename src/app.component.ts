@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BottomNavService } from './services/bottom-nav.service';
-import { CurrentWorkoutService } from './services/current-workout.service';
+import { CurrentWorkoutPanelService } from './services/current-workout-panel.service';
 
 @Component({
   standalone: false,
@@ -17,9 +17,12 @@ import { CurrentWorkoutService } from './services/current-workout.service';
 })
 export class AppComponent {
   bottomNavService: BottomNavService;
-  currentWorkoutService: CurrentWorkoutService;
+  currentWorkoutService: CurrentWorkoutPanelService;
 
-  constructor(bottomNavService: BottomNavService, currentWorkoutService: CurrentWorkoutService) {
+  constructor(
+    bottomNavService: BottomNavService,
+    currentWorkoutService: CurrentWorkoutPanelService,
+  ) {
     this.bottomNavService = bottomNavService;
     this.currentWorkoutService = currentWorkoutService;
   }

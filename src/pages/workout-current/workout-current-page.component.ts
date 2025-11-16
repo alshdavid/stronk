@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BottomNavService } from '../../services/bottom-nav.service';
 import { TopNavService } from '../../services/top-nav.service';
+import { CurrentWorkoutPanelService } from '../../services/current-workout-panel.service';
 import { CurrentWorkoutService } from '../../services/current-workout.service';
 
 @Component({
@@ -9,37 +10,31 @@ import { CurrentWorkoutService } from '../../services/current-workout.service';
   templateUrl: './workout-current-page.component.html',
   styleUrl: './workout-current-page.component.css',
   host: {
-    '[class.open]': 'currentWorkoutService.open', // Binds 'my-active-class' based on 'isActive' property
+    '[class.open]': 'currentWorkoutPanelService.open', // Binds 'my-active-class' based on 'isActive' property
   },
 })
-export class WorkoutCurrentPageComponent implements OnInit, OnDestroy {
-  #bottomNavService: BottomNavService;
-  #topNavService: TopNavService;
-  currentWorkoutService: CurrentWorkoutService;
+export class WorkoutCurrentPageComponent {
+  currentWorkoutPanelService: CurrentWorkoutPanelService;
+  #currentWorkoutService: CurrentWorkoutService;
 
   constructor(
-    bottomNavService: BottomNavService,
-    topNavService: TopNavService,
+    currentWorkoutPanelService: CurrentWorkoutPanelService,
     currentWorkoutService: CurrentWorkoutService,
   ) {
-    this.#bottomNavService = bottomNavService;
-    this.#topNavService = topNavService;
-    this.currentWorkoutService = currentWorkoutService;
-  }
-
-  ngOnInit(): void {
-    // this.#bottomNavService.hide();
-  }
-
-  ngOnDestroy(): void {
-    // this.#bottomNavService.show();
+    this.currentWorkoutPanelService = currentWorkoutPanelService;
+    this.#currentWorkoutService = currentWorkoutService;
   }
 
   openPanel() {
-    this.currentWorkoutService.openPanel();
+    this.currentWorkoutPanelService.openPanel();
   }
 
   closePanel() {
-    this.currentWorkoutService.closePanel();
+    this.currentWorkoutPanelService.closePanel();
+  }
+
+  finishWorkout() {
+    this.#currentWorkoutService.workout = null;
+    this.currentWorkoutPanelService.closePanel();
   }
 }

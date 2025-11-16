@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BottomNavService } from '../../services/bottom-nav.service';
 import { TopNavService } from '../../services/top-nav.service';
 import { WorkoutPageNavComponent } from './workout-nav.component';
+import { CurrentWorkoutService, Workout } from '../../services/current-workout.service';
+import { CurrentWorkoutPanelService } from '../../services/current-workout-panel.service';
 
 @Component({
   standalone: false,
@@ -10,12 +12,22 @@ import { WorkoutPageNavComponent } from './workout-nav.component';
   styleUrl: './workout-page.component.css',
 })
 export class WorkoutPageComponent implements OnInit {
-  #bottomNavService: BottomNavService;
   #topNavService: TopNavService;
+  #currentWorkoutService: CurrentWorkoutService;
+  #currentWorkoutPanelService: CurrentWorkoutPanelService;
 
-  constructor(bottomNavService: BottomNavService, topNavService: TopNavService) {
-    this.#bottomNavService = bottomNavService;
+  get workout(): Workout | null {
+    return this.#currentWorkoutService.workout;
+  }
+
+  constructor(
+    topNavService: TopNavService,
+    currentWorkoutPanelService: CurrentWorkoutPanelService,
+    currentWorkoutService: CurrentWorkoutService,
+  ) {
     this.#topNavService = topNavService;
+    this.#currentWorkoutService = currentWorkoutService;
+    this.#currentWorkoutPanelService = currentWorkoutPanelService;
   }
 
   ngOnInit(): void {
@@ -27,7 +39,12 @@ export class WorkoutPageComponent implements OnInit {
     this.#topNavService.resetToolbar();
   }
 
-  toggle() {
-    this.#bottomNavService.toggle();
+  startNewWorkout() {
+    this.#currentWorkoutService.startNewWorkout();
+    this.#currentWorkoutPanelService.openPanel();
+  }
+
+  openWorkout() {
+    this.#currentWorkoutPanelService.openPanel();
   }
 }

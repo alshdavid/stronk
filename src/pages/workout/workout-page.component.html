@@ -1,1 +1,11 @@
-<!-- <button (click)="toggle()">Toggle</button> -->
+<h1>Quick Start</h1>
+
+<button *ngIf="workout === null" class="start-workout" (click)="startNewWorkout()">
+  START AN EMPTY WORKOUT
+</button>
+
+<button *ngIf="workout !== null" class="start-workout" (click)="openWorkout()">OPEN WORKOUT</button>
+
+<h1>Templates</h1>
+
+<p>Coming Soon</p>

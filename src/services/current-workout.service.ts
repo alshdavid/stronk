@@ -1,46 +1,24 @@
 import { Injectable } from '@angular/core';
-import { BottomNavService } from './bottom-nav.service';
+
+export type Workout = {
+  title: string;
+};
 
 @Injectable()
 export class CurrentWorkoutService {
-  open: boolean;
-  hasWorkout: boolean;
-  #bottomNavService: BottomNavService;
+  workout: Workout | null;
 
-  constructor(bottomNavService: BottomNavService) {
-    this.#bottomNavService = bottomNavService;
-    this.open = this.#hashChange();
-    globalThis.addEventListener('hashchange', this.#hashChange);
-    this.hasWorkout = true;
+  constructor() {
+    this.workout = null;
   }
 
-  togglePanel() {
-    if (this.open) {
-      this.closePanel();
-    } else {
-      this.openPanel();
+  startNewWorkout() {
+    if (this.workout) {
+      throw new Error('Cannot start workout if workout already exists');
     }
-  }
 
-  openPanel() {
-    this.open = true;
-    globalThis.location.hash = 'currentWorkoutOpen=true';
-    this.#bottomNavService.hide();
+    this.workout = {
+      title: 'New Workout',
+    };
   }
-
-  closePanel() {
-    this.open = false;
-    globalThis.location.hash = '';
-    this.#bottomNavService.show();
-  }
-
-  #hashChange = (): boolean => {
-    if (globalThis.location.hash.includes('currentWorkoutOpen=true')) {
-      this.openPanel();
-      return true;
-    } else {
-      this.closePanel();
-      return false;
-    }
-  };
 }

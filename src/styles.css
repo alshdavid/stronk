@@ -17,3 +17,8 @@ html {
   text-rendering: optimizeLegibility;
   box-sizing: border-box;
 }
+
+h1 {
+  margin-top: 0;
+  font-size: 18px;
+}

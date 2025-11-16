@@ -1,0 +1,17 @@
+:host {
+  padding: 16px 3% 0;
+  display: block;
+}
+
+button.start-workout {
+  background-color: var(--color-blue-500);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 8px 0;
+  font-weight: 500;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
