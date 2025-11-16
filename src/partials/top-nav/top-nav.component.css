@@ -16,4 +16,18 @@ nav {
   left: 0;
   right: 0;
   background-color: var(--color-blue-grey-900);
+
+  > *:first-child {
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+  }
+}
+
+:host ::ng-deep nav > *:last-child {
+  display: contents;
+}
+
+:host ::ng-deep img {
+  height: 24px;
 }

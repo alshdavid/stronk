@@ -11,7 +11,6 @@ import { ProfilePageNavComponent } from '../../pages/profile/profile-nav.compone
 export class TopNavComponent {
   vcr = viewChild('container', { read: ViewContainerRef });
   topNavService: TopNavService;
-  #componentRef?: ComponentRef<unknown>;
 
   constructor(topNavService: TopNavService) {
     this.topNavService = topNavService;
@@ -19,8 +18,5 @@ export class TopNavComponent {
 
   ngOnInit() {
     this.topNavService.initOutlet(this.vcr);
-    this.vcr()?.clear();
-    const componentRef = this.vcr()?.createComponent(ProfilePageNavComponent);
-    console.log(this.vcr);
   }
 }

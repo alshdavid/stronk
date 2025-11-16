@@ -3,25 +3,30 @@ import { Component, ComponentRef, Injectable, Signal, ViewContainerRef } from '@
 @Injectable()
 export class TopNavService {
   title: string;
-  #vcr?: Signal<ViewContainerRef | undefined>;
+  #vcrResolve: (value: Signal<ViewContainerRef | undefined>) => void;
+  #vcr: Promise<Signal<ViewContainerRef | undefined>>;
   #componentRef?: ComponentRef<unknown>;
 
   constructor() {
     this.title = '';
+    this.#vcrResolve = () => {};
+    this.#vcr = new Promise((res) => {
+      this.#vcrResolve = res;
+    });
   }
 
   initOutlet(outlet: Signal<ViewContainerRef | undefined>) {
-    this.#vcr = outlet;
+    this.#vcrResolve(outlet);
   }
 
-  setToolbar<T extends new (...params: Array<any>) => Component>(
+  async setToolbar<T extends new (...params: Array<any>) => Component>(
     target: T,
     options?: Parameters<ViewContainerRef['createComponent']>['1'],
-  ): ComponentRef<T> | undefined {
+  ): Promise<ComponentRef<T> | undefined> {
     if (options !== undefined && typeof options !== 'object') {
       throw new Error('Deprecated');
     }
-    const vcr = this.#vcr?.();
+    const vcr = (await this.#vcr)?.();
     vcr?.clear();
     this.resetToolbar();
     const componentRef = vcr?.createComponent(target, options);

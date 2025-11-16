@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   standalone: false,
   selector: 'app-page-profile-navigation',
-  template: /*html*/ `profile`,
+  template: /*html*/ ` <img src="icons/gear.svg" /> `,
 })
 export class ProfilePageNavComponent {}
