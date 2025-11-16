@@ -12,6 +12,8 @@ import { BottomNavService } from './services/bottom-nav.service';
 import { TopNavService } from './services/top-nav.service';
 import { CurrentWorkoutService } from './services/current-workout.service';
 import { CurrentWorkoutPanelService } from './services/current-workout-panel.service';
+import { StorageService } from './services/storage.service';
+import { WorkoutsService } from './services/workouts.service';
 
 import { BottomNavComponent } from './partials/bottom-nav/bottom-nav.component';
 import { TopNavComponent } from './partials/top-nav/top-nav.component';
@@ -27,7 +29,6 @@ import { HistoryPageNavComponent } from './pages/history/history-nav.component';
 import { MeasurePageNavComponent } from './pages/measure/measure-nav.component';
 import { WorkoutPageNavComponent } from './pages/workout/workout-nav.component';
 import { WorkoutCurrentPageComponent } from './pages/workout-current/workout-current-page.component';
-import { StorageService } from './services/storage.service';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { StorageService } from './services/storage.service';
     CurrentWorkoutPanelService,
     CurrentWorkoutService,
     StorageService,
+    WorkoutsService,
   ],
   imports: [BrowserModule, CommonModule, FormsModule, RouterModule.forRoot(routes)],
   bootstrap: [AppComponent],

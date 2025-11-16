@@ -1,1 +1,7 @@
 <!-- <button (click)="toggle()">Toggle</button> -->
+<div class="content-max-width">
+  <div *ngFor="let exercise of exercises">
+    {{ exercise.title || 'Unnamed Workout' }}
+    {{ exercise.date }}
+  </div>
+</div>

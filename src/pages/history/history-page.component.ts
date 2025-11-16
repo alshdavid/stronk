@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BottomNavService } from '../../services/bottom-nav.service';
 import { TopNavService } from '../../services/top-nav.service';
 import { HistoryPageNavComponent } from './history-nav.component';
+import { Workout, WorkoutsService } from '../../services/workouts.service';
 
 @Component({
   standalone: false,
@@ -10,24 +10,23 @@ import { HistoryPageNavComponent } from './history-nav.component';
   styleUrl: './history-page.component.css',
 })
 export class HistoryPageComponent implements OnInit {
-  #bottomNavService: BottomNavService;
   #topNavService: TopNavService;
+  #workoutsService: WorkoutsService;
+  exercises: Array<Workout>;
 
-  constructor(bottomNavService: BottomNavService, topNavService: TopNavService) {
-    this.#bottomNavService = bottomNavService;
+  constructor(topNavService: TopNavService, workoutsService: WorkoutsService) {
     this.#topNavService = topNavService;
+    this.#workoutsService = workoutsService;
+    this.exercises = [];
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.#topNavService.updateTitle('History');
     this.#topNavService.setToolbar(HistoryPageNavComponent);
+    this.exercises = await Array.fromAsync(this.#workoutsService.listWorkouts());
   }
 
   ngOnDestroy(): void {
     this.#topNavService.resetToolbar();
-  }
-
-  toggle() {
-    this.#bottomNavService.toggle();
   }
 }

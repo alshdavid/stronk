@@ -1,4 +1,6 @@
-<section class="workout-peak" (click)="openPanel()">Current Exercise</section>
+<section class="workout-peak" (click)="openPanel()">
+  {{ workout?.title || 'Unnamed Workout' }}
+</section>
 
 <section class="workout-body">
   <nav>

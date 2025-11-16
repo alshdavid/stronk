@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { BottomNavService } from '../../services/bottom-nav.service';
 import { TopNavService } from '../../services/top-nav.service';
 import { WorkoutPageNavComponent } from './workout-nav.component';
-import { CurrentWorkoutService, Workout } from '../../services/current-workout.service';
+import { CurrentWorkoutService } from '../../services/current-workout.service';
 import { CurrentWorkoutPanelService } from '../../services/current-workout-panel.service';
+import type { Workout } from '../../services/workouts.service';
 
 @Component({
   standalone: false,

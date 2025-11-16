@@ -1,21 +1,6 @@
 import { Injectable } from '@angular/core';
 import { StorageService } from './storage.service';
-
-export type Workout = {
-  date: string;
-  title: string;
-  exercises: Array<Exercise>;
-};
-
-export type Exercise = {
-  name: string;
-  sets: Array<WorkoutSet>;
-};
-
-export type WorkoutSet = {
-  reps: null | number;
-  done: boolean;
-};
+import type { Workout } from './workouts.service';
 
 const ACTIVE_KEY = 'stronk:active';
 
@@ -50,7 +35,7 @@ export class CurrentWorkoutService {
       return;
     }
     await this.#storageService.setItemJson(this.workout.date, this.workout);
-  }, 250);
+  }, 100);
 
   async startNewWorkout() {
     if (this.workout) {

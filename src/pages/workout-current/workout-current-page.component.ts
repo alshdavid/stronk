@@ -1,8 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { BottomNavService } from '../../services/bottom-nav.service';
-import { TopNavService } from '../../services/top-nav.service';
+import { Component } from '@angular/core';
 import { CurrentWorkoutPanelService } from '../../services/current-workout-panel.service';
-import { CurrentWorkoutService, Workout } from '../../services/current-workout.service';
+import { CurrentWorkoutService } from '../../services/current-workout.service';
+import type { Workout } from '../../services/workouts.service';
 
 @Component({
   standalone: false,
