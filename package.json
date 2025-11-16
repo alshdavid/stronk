@@ -4,8 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0",
-    "build": "ng build",
-    "build-actions": "ng build --base-href $BASE_HREF && cp ./dist/index.html ./dist/404.html",
+    "build": "ng build && cp ./dist/index.html ./dist/404.html",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
