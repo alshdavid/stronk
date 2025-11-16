@@ -24,6 +24,3 @@ export class AppComponent {
     this.bottomNavService = bottomNavService
   }
 }
-
-//
-//
