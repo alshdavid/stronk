@@ -70,7 +70,13 @@ export class CurrentWorkoutService {
     if (!this.workout) return;
     this.workout.exercises.push({
       name: '',
-      sets: [],
+      sets: [
+        {
+          reps: null,
+          weight: null,
+          done: false,
+        },
+      ],
     });
     await this.sync();
   }
@@ -85,8 +91,15 @@ export class CurrentWorkoutService {
     if (!this.workout) return;
     this.workout.exercises[index].sets.push({
       reps: null,
+      weight: null,
       done: false,
     });
+    await this.sync();
+  }
+
+  async removeSet(index: number, index2: number) {
+    if (!this.workout) return;
+    this.workout.exercises[index].sets.splice(index2, 1);
     await this.sync();
   }
 }

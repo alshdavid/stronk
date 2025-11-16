@@ -42,7 +42,7 @@ input[type='text'] {
   width: 100%;
   border: none;
   border-radius: 4px;
-  padding: 8px 8px;
+  padding: 12px 8px;
   display: block;
   flex: 1;
 }
@@ -86,21 +86,48 @@ input[type='text'] {
 
 .exercise-name {
   display: flex;
+  align-items: center;
   margin-bottom: 12px;
 
   button {
     background-color: var(--color-red-600);
     border: none;
     border-radius: 4px;
-    width: 30px;
+    width: 28px;
+    height: 28px;
     margin-right: 12px;
   }
+}
+
+.set > *:nth-child(1) {
+  width: 28px;
+}
+
+.set > *:nth-child(2) {
+  width: 20px;
+}
+
+.set > *:nth-child(3),
+.set > *:nth-child(4) {
+  width: calc((100% - 68px) / 2);
+}
+
+.set > *:nth-child(5) {
+  width: 20px;
 }
 
 .set {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
+
+  & > * {
+    text-align: center;
+  }
+
+  &.heading {
+    font-size: 12px;
+  }
 
   button {
     display: flex;

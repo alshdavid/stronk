@@ -23,9 +23,17 @@
           [(ngModel)]="exercise.name"
         />
       </div>
-      <div class="set" *ngFor="let set of exercise.sets; let i = index">
-        <button class="remove-set" (click)="removeExercise(i)">X</button>
-        <div class="set-num">{{ i + 1 }}</div>
+      <div class="set heading">
+        <div></div>
+        <div>SET</div>
+        <div>(+KG)</div>
+        <div>REPS</div>
+        <div></div>
+      </div>
+      <div class="set" *ngFor="let set of exercise.sets; let i2 = index">
+        <button class="remove-set" (click)="removeSet(i, i2)">X</button>
+        <div class="set-num">{{ i2 + 1 }}</div>
+        <input (input)="sync()" type="number" placeholder="0" [(ngModel)]="set.weight" />
         <input (input)="sync()" type="number" placeholder="0" [(ngModel)]="set.reps" />
         <input (input)="sync()" type="checkbox" [(ngModel)]="set.done" />
       </div>

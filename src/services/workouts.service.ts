@@ -14,6 +14,7 @@ export type Exercise = {
 
 export type WorkoutSet = {
   reps: null | number;
+  weight: null | number;
   done: boolean;
 };
 

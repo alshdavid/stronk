@@ -1,7 +1,27 @@
-<!-- <button (click)="toggle()">Toggle</button> -->
 <div class="content-max-width">
-  <div *ngFor="let exercise of exercises">
-    {{ exercise.title || 'Unnamed Workout' }}
-    {{ exercise.date }}
+  <div class="exercise" *ngFor="let workout of workouts">
+    <h1>{{ workout.title || 'Unnamed Workout' }}</h1>
+    <time [attr.datetime]="workout.date">{{ workout.date }}</time>
+
+    <div class="breakdown">
+      <div class="title">
+        <div>Sets</div>
+        <div>Best Set</div>
+      </div>
+
+      <div *ngFor="let exercise of workout.exercises">
+        <div>{{ exercise.sets.length }} x {{ exercise.name }}</div>
+        <div>{{ bestSet(exercise.sets) }}</div>
+      </div>
+    </div>
+
+    <div class="summary">
+      <div></div>
+      <div>
+        <img src="icons/weight-hanging.svg" />
+        <span>{{ totalVolume(workout) }} kg</span>
+      </div>
+      <div></div>
+    </div>
   </div>
 </div>

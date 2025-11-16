@@ -50,15 +50,19 @@ export class WorkoutCurrentPageComponent {
     this.currentWorkoutPanelService.closePanel();
   }
 
-  addExercise() {
+  async addExercise() {
     this.#currentWorkoutService.addExercise();
   }
 
-  removeExercise(index: number) {
+  async removeExercise(index: number) {
     this.#currentWorkoutService.removeExercise(index);
   }
 
-  addSet(index: number) {
+  async addSet(index: number) {
     this.#currentWorkoutService.addSet(index);
+  }
+
+  async removeSet(index: number, index2: number) {
+    await this.#currentWorkoutService.removeSet(index, index2);
   }
 }
