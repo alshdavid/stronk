@@ -9,7 +9,7 @@
   height: calc(100dvh + var(--height-peak));
   transform: translateY(100%);
   z-index: 3;
-  background-color: var(--color-blue-grey-900);
+  background-color: var(--color-blue-grey-850);
   transition: transform ease-in-out 0.25s;
 
   &.hasWorkout {
@@ -26,8 +26,8 @@
 
   .workout-title {
     box-shadow:
-      0 -1px 5px rgba(0, 0, 0, 0.25),
-      0 0 0px rgba(0, 0, 0, 0.31);
+      0 -1px 5px rgba(0, 0, 0, 0.15),
+      0 0 0px rgba(0, 0, 0, 0.2);
     transition: opacity ease-in-out 0.25s;
     opacity: 1;
     height: var(--height-peak);

@@ -9,14 +9,14 @@ nav {
   padding: 0 12px;
   height: 48px;
   box-shadow:
-    0 1px 5px rgba(0, 0, 0, 0.25),
-    0 0 0px rgba(0, 0, 0, 0.31);
+    0 1px 5px rgba(0, 0, 0, 0.15),
+    0 0 0px rgba(0, 0, 0, 0.2);
   z-index: 2;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background-color: var(--color-blue-grey-900);
+  background-color: var(--color-blue-grey-850);
 
   > *:first-child {
     font-weight: 400;
