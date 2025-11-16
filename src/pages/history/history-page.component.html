@@ -1,5 +1,9 @@
+<app-navigation-top>
+  <h1>History</h1>
+</app-navigation-top>
+
 <div class="content-max-width">
-  <div class="exercise" *ngFor="let workout of workouts">
+  <div class="exercise" *ngFor="let workout of workouts" [routerLink]="'/workout/' + workout.id">
     <h1>{{ workout.title || 'Unnamed Workout' }}</h1>
     <time [attr.datetime]="workout.date">{{ workout.date }}</time>
 

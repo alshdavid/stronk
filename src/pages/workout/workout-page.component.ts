@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { BottomNavService } from '../../services/bottom-nav.service';
-import { TopNavService } from '../../services/top-nav.service';
-import { WorkoutPageNavComponent } from './workout-nav.component';
+import { Component } from '@angular/core';
 import { CurrentWorkoutService } from '../../services/current-workout.service';
 import { CurrentWorkoutPanelService } from '../../services/current-workout-panel.service';
 import type { Workout } from '../../services/workouts.service';
@@ -12,8 +9,7 @@ import type { Workout } from '../../services/workouts.service';
   templateUrl: './workout-page.component.html',
   styleUrl: './workout-page.component.css',
 })
-export class WorkoutPageComponent implements OnInit {
-  #topNavService: TopNavService;
+export class WorkoutPageComponent {
   #currentWorkoutService: CurrentWorkoutService;
   #currentWorkoutPanelService: CurrentWorkoutPanelService;
 
@@ -22,22 +18,11 @@ export class WorkoutPageComponent implements OnInit {
   }
 
   constructor(
-    topNavService: TopNavService,
     currentWorkoutPanelService: CurrentWorkoutPanelService,
     currentWorkoutService: CurrentWorkoutService,
   ) {
-    this.#topNavService = topNavService;
     this.#currentWorkoutService = currentWorkoutService;
     this.#currentWorkoutPanelService = currentWorkoutPanelService;
-  }
-
-  ngOnInit(): void {
-    this.#topNavService.updateTitle('Workout');
-    this.#topNavService.setToolbar(WorkoutPageNavComponent);
-  }
-
-  ngOnDestroy(): void {
-    this.#topNavService.resetToolbar();
   }
 
   startNewWorkout() {

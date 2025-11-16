@@ -25,6 +25,20 @@ nav {
   }
 }
 
+.title,
+.title i {
+  display: flex;
+  align-items: center;
+}
+
+:host ::ng-deep nav > h1 {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.5px;
+}
+
 :host ::ng-deep nav > *:last-child {
   display: contents;
 }

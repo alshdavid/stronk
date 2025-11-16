@@ -15,7 +15,8 @@ export class CurrentWorkoutService {
     const active = globalThis.localStorage.getItem(ACTIVE_KEY);
     if (active) {
       this.workout = {
-        date: active,
+        id: active,
+        date: '',
         title: '',
         exercises: [],
       };
@@ -31,10 +32,10 @@ export class CurrentWorkoutService {
   }
 
   sync = debounceAsync(async () => {
-    if (!this.workout?.date) {
+    if (!this.workout?.id) {
       return;
     }
-    await this.#storageService.setItemJson(this.workout.date, this.workout);
+    await this.#storageService.setItemJson(this.workout.id, this.workout);
   }, 100);
 
   async startNewWorkout() {
@@ -42,13 +43,14 @@ export class CurrentWorkoutService {
       throw new Error('Cannot start workout if workout already exists');
     }
 
-    const date = new Date().toISOString();
+    const id = crypto.randomUUID();
     this.workout = {
+      id,
       title: '',
-      date,
+      date: new Date().toISOString(),
       exercises: [],
     };
-    globalThis.localStorage.setItem(ACTIVE_KEY, date);
+    globalThis.localStorage.setItem(ACTIVE_KEY, id);
     await this.sync();
   }
 
@@ -61,7 +63,7 @@ export class CurrentWorkoutService {
 
   async discardWorkout() {
     if (!this.workout) return;
-    this.#storageService.removeItem(this.workout.date);
+    this.#storageService.removeItem(this.workout.id);
     globalThis.localStorage.removeItem(ACTIVE_KEY);
     this.workout = null;
   }

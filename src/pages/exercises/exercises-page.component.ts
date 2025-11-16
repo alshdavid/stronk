@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { TopNavService } from '../../services/top-nav.service';
 import { ExercisesPageNavComponent } from './exercises-nav.component';
 
 @Component({
@@ -8,19 +7,4 @@ import { ExercisesPageNavComponent } from './exercises-nav.component';
   templateUrl: './exercises-page.component.html',
   styleUrl: './exercises-page.component.css',
 })
-export class ExercisesPageComponent implements OnInit {
-  #topNavService: TopNavService;
-
-  constructor(topNavService: TopNavService) {
-    this.#topNavService = topNavService;
-  }
-
-  ngOnInit() {
-    this.#topNavService.updateTitle('Exercises');
-    this.#topNavService.setToolbar(ExercisesPageNavComponent);
-  }
-
-  ngOnDestroy(): void {
-    this.#topNavService.resetToolbar();
-  }
-}
+export class ExercisesPageComponent {}

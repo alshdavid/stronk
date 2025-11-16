@@ -10,9 +10,10 @@ import { CurrentWorkoutPanelService } from './services/current-workout-panel.ser
     <app-page-workout-current
       [ngClass]="{ hasWorkout: currentWorkoutService.hasWorkout, open: currentWorkoutService.open }"
     ></app-page-workout-current>
-    <app-navigation-top></app-navigation-top>
     <router-outlet></router-outlet>
-    <app-navigation-bottom [ngClass]="{ hide: !bottomNavService.visible }"></app-navigation-bottom>
+    <app-navigation-bottom
+      [ngClass]="{ hide: !bottomNavService.visible() }"
+    ></app-navigation-bottom>
   `,
 })
 export class AppComponent {

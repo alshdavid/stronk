@@ -1,25 +1,22 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal, Signal, WritableSignal } from '@angular/core';
 
 @Injectable()
 export class BottomNavService {
-  visible: boolean;
+  visible: WritableSignal<boolean>;
 
   constructor() {
-    this.visible = true;
+    this.visible = signal(true);
   }
 
-  toggle(): Promise<void> {
-    this.visible = !this.visible;
-    return new Promise((res) => setTimeout(res, 150));
+  toggle() {
+    this.visible.update((v) => !v);
   }
 
-  show(): Promise<void> {
-    this.visible = true;
-    return new Promise((res) => setTimeout(res, 150));
+  show() {
+    this.visible.update(() => true);
   }
 
-  hide(): Promise<void> {
-    this.visible = false;
-    return new Promise((res) => setTimeout(res, 150));
+  hide() {
+    this.visible.update(() => false);
   }
 }

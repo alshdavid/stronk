@@ -1,0 +1,56 @@
+.exercise {
+  border: 1px solid var(--color-grey-700);
+  border-radius: 4px;
+  margin-bottom: 12px;
+  padding: 8px;
+
+  h1 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 4px;
+  }
+
+  time {
+    display: block;
+    font-size: 14px;
+    color: var(--color-grey-500);
+    margin-bottom: 12px;
+  }
+
+  .breakdown {
+    & > div {
+      display: flex;
+      font-size: 14px;
+      color: var(--color-grey-500);
+
+      &.title {
+        color: white;
+      }
+
+      & > div:first-child {
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      & > div:last-child {
+        width: 80px;
+      }
+    }
+  }
+
+  .summary {
+    > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    img {
+      height: 20px;
+      opacity: 0.5;
+    }
+  }
+}

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { StorageService } from './storage.service';
 
 export type Workout = {
+  id: string;
   date: string;
   title: string;
   exercises: Array<Exercise>;

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { TopNavService } from '../../services/top-nav.service';
-import { HistoryPageNavComponent } from './history-nav.component';
 import { Workout, WorkoutSet, WorkoutsService } from '../../services/workouts.service';
 
 @Component({
@@ -10,25 +8,16 @@ import { Workout, WorkoutSet, WorkoutsService } from '../../services/workouts.se
   styleUrl: './history-page.component.css',
 })
 export class HistoryPageComponent implements OnInit {
-  #topNavService: TopNavService;
   #workoutsService: WorkoutsService;
   workouts: Array<Workout>;
 
-  constructor(topNavService: TopNavService, workoutsService: WorkoutsService) {
-    this.#topNavService = topNavService;
+  constructor(workoutsService: WorkoutsService) {
     this.#workoutsService = workoutsService;
     this.workouts = [];
   }
 
   async ngOnInit() {
-    this.#topNavService.updateTitle('History');
-    this.#topNavService.setToolbar(HistoryPageNavComponent);
     this.workouts = await Array.fromAsync(this.#workoutsService.listWorkouts());
-    console.log(this.workouts);
-  }
-
-  ngOnDestroy(): void {
-    this.#topNavService.resetToolbar();
   }
 
   totalVolume(workout: Workout): number {
