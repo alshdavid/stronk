@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Workout, WorkoutsService } from '../../services/workouts.service';
-import { BottomNavService } from '../../services/bottom-nav.service';
 import { ActivatedRoute } from '@angular/router';
+import { BottomNavService } from '../../services/bottom-nav.service';
 
 @Component({
   standalone: false,
@@ -10,10 +10,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './workout-detail-page.component.css',
 })
 export class WorkoutDetailPageComponent implements OnInit {
-  #bottomNavService: BottomNavService;
   #workoutsService: WorkoutsService;
   #activatedRoute: ActivatedRoute;
-  workouts: Array<Workout>;
+  #bottomNavService: BottomNavService;
+  workout: Workout | null;
 
   public get id() {
     return this.#activatedRoute.snapshot.params['id'];
@@ -21,21 +21,30 @@ export class WorkoutDetailPageComponent implements OnInit {
 
   constructor(
     activatedRoute: ActivatedRoute,
-    bottomNavService: BottomNavService,
     workoutsService: WorkoutsService,
+    bottomNavService: BottomNavService,
   ) {
     this.#activatedRoute = activatedRoute;
-    this.#bottomNavService = bottomNavService;
     this.#workoutsService = workoutsService;
-    this.workouts = [];
+    this.workout = null;
+    this.#bottomNavService = bottomNavService;
   }
 
   async ngOnInit() {
-    this.#bottomNavService.hide();
-    console.log(this.id);
+    this.#bottomNavService.disable();
+    this.workout = await this.#workoutsService.getWorkout(this.id);
+    console.log(this.workout);
   }
 
-  ngOnDestroy(): void {
-    this.#bottomNavService.show();
+  ngOnDestroy() {
+    this.#bottomNavService.enable();
+  }
+
+  calculate1rm(weight: number, reps: number): number {
+    if (reps === 1) {
+      return Math.round(weight);
+    }
+    const oneRM = weight * (1 + reps / 30);
+    return Math.round(oneRM);
   }
 }

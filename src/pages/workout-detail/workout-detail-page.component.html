@@ -1,5 +1,32 @@
 <app-navigation-top>
   <app-navigation-back></app-navigation-back>
+  <div><img src="icons/ellipsis-vertical.svg" /></div>
 </app-navigation-top>
 
-<div class="content-max-width"></div>
+<div class="content-max-width">
+  <h1>{{ workout?.title }}</h1>
+  <time>{{ workout?.date }}</time>
+
+  <article *ngFor="let exercise of workout?.exercises || []">
+    <div class="entry title">
+      <div>{{ exercise.name }}</div>
+      <div>1RM</div>
+    </div>
+
+    <ng-container *ngFor="let set of exercise.sets">
+      <div class="entry" *ngIf="set.done === true">
+        <div>
+          <span class="pad-end">{{ set.weight }} kg</span> x {{ set.reps }}
+        </div>
+        <div>{{ calculate1rm(set.weight || 0, set.reps || 0) }}</div>
+      </div>
+    </ng-container>
+  </article>
+</div>
+
+<footer>
+  <div class="buffer"></div>
+  <div class="content">
+    <button class="btn blue">PERFORM AGAIN</button>
+  </div>
+</footer>

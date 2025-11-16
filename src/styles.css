@@ -34,3 +34,51 @@ h1 {
   margin-top: 0;
   font-size: 18px;
 }
+
+footer {
+  display: block;
+  z-index: 3;
+  height: var(--height-bottom-nav);
+  display: flex;
+  height: var(--height-bottom-nav);
+  box-shadow:
+    0 -1px 5px rgba(0, 0, 0, 0.15),
+    0 0 0px rgba(0, 0, 0, 0.2);
+  z-index: 4;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-blue-grey-850);
+
+  .buffer {
+  }
+
+  .content {
+  }
+}
+
+.btn {
+  background-color: var(--color-grey-600);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 12px;
+  font-weight: 500;
+  border-radius: 4px;
+
+  &.primary,
+  &.blue {
+    background-color: var(--color-blue-500);
+  }
+
+  &.red {
+    background-color: var(--color-red-500);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+  }
+}

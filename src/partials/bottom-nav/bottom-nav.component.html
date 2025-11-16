@@ -1,4 +1,5 @@
-<div class="bottom-nav-boundary"></div>
+<div class="bottom-nav-boundary" *ngIf="bottomNavService.enabled()"></div>
+<!-- <nav *ngIf="bottomNavService.enabled()"> -->
 <nav>
   <button routerLink="profile" routerLinkActive="active">
     <img src="icons/profile.svg" />

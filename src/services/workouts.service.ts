@@ -37,4 +37,8 @@ export class WorkoutsService {
       yield (await this.#storageService.getItemJson<Workout>(key))!;
     }
   }
+
+  getWorkout(id: string): Promise<Workout | null> {
+    return this.#storageService.getItemJson<Workout>(id);
+  }
 }
