@@ -8,9 +8,9 @@ import { BottomNavService } from './services/bottom-nav.service';
 
   `,
   template: /*html*/`
-    <app-nav></app-nav>
+    <app-navigation-top></app-navigation-top>
     <router-outlet></router-outlet>
-    <app-bottom-navigation [ngClass]="{hide: !bottomNavService.visible}"></app-bottom-navigation>
+    <app-navigation-bottom [ngClass]="{hide: !bottomNavService.visible}"></app-navigation-bottom>
   `,
 })
 export class AppComponent {
