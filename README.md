@@ -7,7 +7,7 @@ This is a free installable web application designed to help with tracking weight
 *Notes:*
 - *This project is under active development. Please request features in the [issue tracker](https://github.com/alshdavid/stronk/issues).*
 - *The project is accepting pull requests, feel free to contribute*
-- *Currently the app saves all workouts locally to your device. If you lose your device then data will be lost. In the works is remote sync for storage*
+- *Currently the app saves all workouts locally to your device. If you lose your device then data will be lost. Remote backup is under development*
 
 <table>
 <tr>
