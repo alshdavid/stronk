@@ -4,6 +4,13 @@
 
 This is a free installable web application designed to help with tracking weight lifting progress over time.
 
+<i>Note: This project is under active development. Please request features in the [issue tracker](https://github.com/alshdavid/stronk/issues).</i>
+
+<i>The project is accepting pull requests, feel free to contribute</i>
+
+<i>Currently the app saves all workouts locally to your device. If you lose your device then data will be lost. In the works is remote sync for storage</i>
+
+
 <table>
 <tr>
 <th>
