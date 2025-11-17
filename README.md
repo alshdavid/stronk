@@ -1,4 +1,4 @@
-# Stronk
+# [Stronk.app](https://stronk.app)
 
 ## Open Source Weight Lifting Tracker
 
