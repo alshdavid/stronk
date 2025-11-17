@@ -6,3 +6,24 @@ article {
     border: none;
   }
 }
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  box-shadow:
+    0 1px 5px rgba(0, 0, 0, 0.15),
+    0 0 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  height: var(--height-top-nav);
+  position: fixed;
+  top: var(--height-top-nav);
+  left: 0;
+  right: 0;
+  background-color: var(--color-blue-grey-800);
+}
+
+.filter-padding {
+  height: var(--height-top-nav);
+}

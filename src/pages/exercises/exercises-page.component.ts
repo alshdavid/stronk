@@ -23,7 +23,9 @@ export class ExercisesPageComponent {
       return;
     }
     this.exerciseList.update(() =>
-      this.exerciseListService.exercises().filter((entry) => entry.includes(filter)),
+      this.exerciseListService
+        .exercises()
+        .filter((entry) => entry.toLowerCase().includes(filter.toLowerCase())),
     );
   }
 }
