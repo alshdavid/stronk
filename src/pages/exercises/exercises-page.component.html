@@ -2,3 +2,9 @@
   <h1>Exercises</h1>
   <app-page-exercises-navigation></app-page-exercises-navigation>
 </app-navigation-top>
+
+<div class="content-max-width">
+  <article *ngFor="let exercise of exerciseListService.exercises()">
+    {{ exercise }}
+  </article>
+</div>

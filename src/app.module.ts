@@ -30,6 +30,7 @@ import { WorkoutPageNavComponent } from './pages/workout/workout-nav.component';
 import { WorkoutCurrentPageComponent } from './pages/workout-current/workout-current-page.component';
 import { WorkoutDetailPageComponent } from './pages/workout-detail/workout-detail-page.component';
 import { WorkoutDetailPageNavComponent } from './pages/workout-detail/workout-detail-nav.component';
+import { ExerciseListService } from './services/exercise-list.service';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { WorkoutDetailPageNavComponent } from './pages/workout-detail/workout-de
     CurrentWorkoutService,
     StorageService,
     WorkoutsService,
+    ExerciseListService,
   ],
   imports: [BrowserModule, CommonModule, FormsModule, RouterModule.forRoot(routes)],
   bootstrap: [AppComponent],

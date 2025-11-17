@@ -1,0 +1,13 @@
+{
+	"manifest_version": 1,
+	"version": "0.1.0",
+	"short_name": "Stronk",
+	"name": "Stronk",
+	"start_url": "/index.html",
+	"display": "standalone",
+	"icons": [{
+		"src": "/favicon.svg",
+		"type": "image/svg+xml",
+		"sizes": "264x264"
+	}]
+}

@@ -4,7 +4,7 @@
 </app-navigation-top>
 
 <div class="content-max-width" *ngIf="workout !== null">
-  <h1>{{ workout?.title }}</h1>
+  <h1>{{ workout.title }}</h1>
   <time [attr.datetime]="workout.date">{{ formatDate(workout.date) }}</time>
 
   <article *ngFor="let exercise of workout.exercises || []">
