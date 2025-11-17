@@ -15,13 +15,10 @@
 
     <article class="exercise" *ngFor="let exercise of workout?.exercises || []; let i = index">
       <div class="exercise-name">
-        <button (click)="removeExercise(i)">X</button>
-        <input
-          type="text"
-          placeholder="Exercise Name"
-          (input)="sync()"
-          [(ngModel)]="exercise.name"
-        />
+        <button class="btn red cancel" (click)="removeExercise(i)">X</button>
+        <button class="btn input" [routerLink]="'/exercise-picker/' + i">
+          {{ exercise.name }}
+        </button>
       </div>
       <div class="set heading">
         <div></div>
@@ -40,7 +37,7 @@
       <button class="add-set" (click)="addSet(i)">ADD SET</button>
     </article>
 
-    <button class="add-exercise" (click)="addExercise()">ADD EXERCISE</button>
+    <button class="add-exercise" [routerLink]="'/exercise-picker/' + null">ADD EXERCISE</button>
 
     <button class="cancel-workout" (click)="cancelWorkout()">CANCEL WORKOUT</button>
   </div>

@@ -89,10 +89,7 @@ input[type='text'] {
   align-items: center;
   margin-bottom: 12px;
 
-  button {
-    background-color: var(--color-red-600);
-    border: none;
-    border-radius: 4px;
+  button.cancel {
     width: 28px;
     height: 28px;
     margin-right: 12px;

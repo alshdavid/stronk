@@ -1,0 +1,20 @@
+<app-navigation-top>
+  <app-navigation-back></app-navigation-back>
+  <h1>Pick Exercise</h1>
+</app-navigation-top>
+
+<main>
+  <div class="filter">
+    <input
+      (input)="applyFilter($event.target.value)"
+      class="input"
+      type="text"
+      placeholder="Filter"
+    />
+  </div>
+  <div class="filter-padding"></div>
+
+  <article *ngFor="let exercise of exerciseList()" (click)="pickExercise(exercise)">
+    {{ exercise }}
+  </article>
+</main>

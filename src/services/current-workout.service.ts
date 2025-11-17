@@ -68,10 +68,10 @@ export class CurrentWorkoutService {
     this.workout = null;
   }
 
-  async addExercise() {
+  async addExercise(name: string = '') {
     if (!this.workout) return;
     this.workout.exercises.push({
-      name: '',
+      name,
       sets: [
         {
           reps: null,

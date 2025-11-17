@@ -6,6 +6,7 @@ import { MeasurePageComponent } from './pages/measure/measure-page.component';
 import { WorkoutPageComponent } from './pages/workout/workout-page.component';
 import { WorkoutCurrentPageComponent } from './pages/workout-current/workout-current-page.component';
 import { WorkoutDetailPageComponent } from './pages/workout-detail/workout-detail-page.component';
+import { ExercisePickerPageComponent } from './pages/exercise-picker/exercise-picker-page.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'profile', pathMatch: 'full' },
@@ -50,5 +51,11 @@ export const routes: Routes = [
     pathMatch: 'full',
     path: 'workout-current',
     component: WorkoutCurrentPageComponent,
+  },
+  {
+    title: 'Stronk - Pick Exercise',
+    pathMatch: 'full',
+    path: 'exercise-picker/:index',
+    component: ExercisePickerPageComponent,
   },
 ];

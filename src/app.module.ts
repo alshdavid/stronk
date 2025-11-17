@@ -31,6 +31,7 @@ import { WorkoutCurrentPageComponent } from './pages/workout-current/workout-cur
 import { WorkoutDetailPageComponent } from './pages/workout-detail/workout-detail-page.component';
 import { WorkoutDetailPageNavComponent } from './pages/workout-detail/workout-detail-nav.component';
 import { ExerciseListService } from './services/exercise-list.service';
+import { ExercisePickerPageComponent } from './pages/exercise-picker/exercise-picker-page.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ExerciseListService } from './services/exercise-list.service';
     WorkoutCurrentPageComponent,
     WorkoutDetailPageComponent,
     WorkoutDetailPageNavComponent,
+    ExercisePickerPageComponent,
   ],
   providers: [
     BackgroundWorkerService,

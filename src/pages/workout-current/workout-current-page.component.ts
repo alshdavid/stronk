@@ -50,6 +50,8 @@ export class WorkoutCurrentPageComponent {
     this.currentWorkoutPanelService.closePanel();
   }
 
+  async changeExercise(index: number) {}
+
   async addExercise() {
     this.#currentWorkoutService.addExercise();
   }
