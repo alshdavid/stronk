@@ -4,6 +4,8 @@
 
 This is a free installable web application designed to help with tracking weight lifting progress over time.
 
+It's free and always will be.
+
 *Notes:*
 - *This project is under active development. Please request features in the [issue tracker](https://github.com/alshdavid/stronk/issues).*
 - *The project is accepting pull requests, feel free to contribute*
@@ -27,8 +29,8 @@ This is a free installable web application designed to help with tracking weight
 </table>
 
 
----
+## Support The Development
 
-<a href="https://wise.com/pay/me/davidsama1">
-  <img height="200px" href=".docs/donate.png" />
-</a>
+Donate with Wise:
+
+[<img height="200px" src=".docs/donate.png" >](https://wise.com/pay/me/davidsama1)
