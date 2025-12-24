@@ -9,6 +9,8 @@ This is a free installable web application designed to help with tracking weight
 - *The project is accepting pull requests, feel free to contribute*
 - *Currently the app saves all workouts locally to your device. If you lose your device then data will be lost. Remote backup is under development*
 
+
+
 <table>
 <tr>
 <th>
@@ -23,3 +25,10 @@ This is a free installable web application designed to help with tracking weight
 </th>
 </tr>  
 </table>
+
+
+---
+
+<a href="https://wise.com/pay/me/davidsama1">
+  <img height="200px" href=".docs/donate.png" />
+</a>
