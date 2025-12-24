@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   selector: 'app-page-settings-navigation',
   template: /*html*/ ``,
 })
-export class SettingsPageNavComponent {}
+export class SettingsPageNavComponent {
+
+}
