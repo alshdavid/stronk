@@ -6020,15 +6020,15 @@ var Base = class {
   mxPathname = 64;
   _module;
   /**
-   * @param {string} name 
-   * @param {object} module 
+   * @param {string} name
+   * @param {object} module
    */
   constructor(name, module) {
     this.name = name;
     this._module = module;
   }
   /**
-   * @returns {void|Promise<void>} 
+   * @returns {void|Promise<void>}
    */
   close() {
   }
@@ -6040,158 +6040,158 @@ var Base = class {
   }
   /**
    * Overload in subclasses to indicate which methods are asynchronous.
-   * @param {string} methodName 
+   * @param {string} methodName
    * @returns {boolean}
    */
   hasAsyncMethod(methodName) {
     return false;
   }
   /**
-   * @param {number} pVfs 
-   * @param {number} zName 
-   * @param {number} pFile 
-   * @param {number} flags 
-   * @param {number} pOutFlags 
+   * @param {number} pVfs
+   * @param {number} zName
+   * @param {number} pFile
+   * @param {number} flags
+   * @param {number} pOutFlags
    * @returns {number|Promise<number>}
    */
   xOpen(pVfs, zName, pFile, flags, pOutFlags) {
     return SQLITE_CANTOPEN;
   }
   /**
-   * @param {number} pVfs 
-   * @param {number} zName 
-   * @param {number} syncDir 
+   * @param {number} pVfs
+   * @param {number} zName
+   * @param {number} syncDir
    * @returns {number|Promise<number>}
    */
   xDelete(pVfs, zName, syncDir) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pVfs 
-   * @param {number} zName 
-   * @param {number} flags 
-   * @param {number} pResOut 
+   * @param {number} pVfs
+   * @param {number} zName
+   * @param {number} flags
+   * @param {number} pResOut
    * @returns {number|Promise<number>}
    */
   xAccess(pVfs, zName, flags, pResOut) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pVfs 
-   * @param {number} zName 
-   * @param {number} nOut 
-   * @param {number} zOut 
+   * @param {number} pVfs
+   * @param {number} zName
+   * @param {number} nOut
+   * @param {number} zOut
    * @returns {number|Promise<number>}
    */
   xFullPathname(pVfs, zName, nOut, zOut) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pVfs 
-   * @param {number} nBuf 
-   * @param {number} zBuf 
+   * @param {number} pVfs
+   * @param {number} nBuf
+   * @param {number} zBuf
    * @returns {number|Promise<number>}
    */
   xGetLastError(pVfs, nBuf, zBuf) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pFile 
+   * @param {number} pFile
    * @returns {number|Promise<number>}
    */
   xClose(pFile) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pFile 
-   * @param {number} pData 
-   * @param {number} iAmt 
-   * @param {number} iOffsetLo 
-   * @param {number} iOffsetHi 
+   * @param {number} pFile
+   * @param {number} pData
+   * @param {number} iAmt
+   * @param {number} iOffsetLo
+   * @param {number} iOffsetHi
    * @returns {number|Promise<number>}
    */
   xRead(pFile, pData, iAmt, iOffsetLo, iOffsetHi) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pFile 
-   * @param {number} pData 
-   * @param {number} iAmt 
-   * @param {number} iOffsetLo 
-   * @param {number} iOffsetHi 
+   * @param {number} pFile
+   * @param {number} pData
+   * @param {number} iAmt
+   * @param {number} iOffsetLo
+   * @param {number} iOffsetHi
    * @returns {number|Promise<number>}
    */
   xWrite(pFile, pData, iAmt, iOffsetLo, iOffsetHi) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pFile 
-   * @param {number} sizeLo 
-   * @param {number} sizeHi 
+   * @param {number} pFile
+   * @param {number} sizeLo
+   * @param {number} sizeHi
    * @returns {number|Promise<number>}
    */
   xTruncate(pFile, sizeLo, sizeHi) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pFile 
-   * @param {number} flags 
+   * @param {number} pFile
+   * @param {number} flags
    * @returns {number|Promise<number>}
    */
   xSync(pFile, flags) {
     return SQLITE_OK;
   }
   /**
-   * 
-   * @param {number} pFile 
-   * @param {number} pSize 
+   *
+   * @param {number} pFile
+   * @param {number} pSize
    * @returns {number|Promise<number>}
    */
   xFileSize(pFile, pSize) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pFile 
-   * @param {number} lockType 
+   * @param {number} pFile
+   * @param {number} lockType
    * @returns {number|Promise<number>}
    */
   xLock(pFile, lockType) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pFile 
-   * @param {number} lockType 
+   * @param {number} pFile
+   * @param {number} lockType
    * @returns {number|Promise<number>}
    */
   xUnlock(pFile, lockType) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pFile 
-   * @param {number} pResOut 
+   * @param {number} pFile
+   * @param {number} pResOut
    * @returns {number|Promise<number>}
    */
   xCheckReservedLock(pFile, pResOut) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pFile 
-   * @param {number} op 
-   * @param {number} pArg 
+   * @param {number} pFile
+   * @param {number} op
+   * @param {number} pArg
    * @returns {number|Promise<number>}
    */
   xFileControl(pFile, op, pArg) {
     return SQLITE_NOTFOUND;
   }
   /**
-   * @param {number} pFile 
+   * @param {number} pFile
    * @returns {number|Promise<number>}
    */
   xSectorSize(pFile) {
     return DEFAULT_SECTOR_SIZE;
   }
   /**
-   * @param {number} pFile 
+   * @param {number} pFile
    * @returns {number|Promise<number>}
    */
   xDeviceCharacteristics(pFile) {
@@ -6214,15 +6214,15 @@ var AsyncFunction2 = Object.getPrototypeOf(async function() {
 }).constructor;
 var FacadeVFS = class extends Base {
   /**
-   * @param {string} name 
-   * @param {object} module 
+   * @param {string} name
+   * @param {object} module
    */
   constructor(name, module) {
     super(name, module);
   }
   /**
    * Override to indicate which methods are asynchronous.
-   * @param {string} methodName 
+   * @param {string} methodName
    * @returns {boolean}
    */
   hasAsyncMethod(methodName) {
@@ -6231,42 +6231,42 @@ var FacadeVFS = class extends Base {
   }
   /**
    * Return the filename for a file id for use by mixins.
-   * @param {number} pFile 
+   * @param {number} pFile
    * @returns {string}
    */
   getFilename(pFile) {
     throw new Error("unimplemented");
   }
   /**
-   * @param {string?} filename 
-   * @param {number} pFile 
-   * @param {number} flags 
-   * @param {DataView} pOutFlags 
+   * @param {string?} filename
+   * @param {number} pFile
+   * @param {number} flags
+   * @param {DataView} pOutFlags
    * @returns {number|Promise<number>}
    */
   jOpen(filename, pFile, flags, pOutFlags) {
     return SQLITE_CANTOPEN;
   }
   /**
-   * @param {string} filename 
-   * @param {number} syncDir 
+   * @param {string} filename
+   * @param {number} syncDir
    * @returns {number|Promise<number>}
    */
   jDelete(filename, syncDir) {
     return SQLITE_OK;
   }
   /**
-   * @param {string} filename 
-   * @param {number} flags 
-   * @param {DataView} pResOut 
+   * @param {string} filename
+   * @param {number} flags
+   * @param {DataView} pResOut
    * @returns {number|Promise<number>}
    */
   jAccess(filename, flags, pResOut) {
     return SQLITE_OK;
   }
   /**
-   * @param {string} filename 
-   * @param {Uint8Array} zOut 
+   * @param {string} filename
+   * @param {Uint8Array} zOut
    * @returns {number|Promise<number>}
    */
   jFullPathname(filename, zOut) {
@@ -6277,23 +6277,23 @@ var FacadeVFS = class extends Base {
     return SQLITE_OK;
   }
   /**
-   * @param {Uint8Array} zBuf 
+   * @param {Uint8Array} zBuf
    * @returns {number|Promise<number>}
    */
   jGetLastError(zBuf) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pFile 
+   * @param {number} pFile
    * @returns {number|Promise<number>}
    */
   jClose(pFile) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pFile 
-   * @param {Uint8Array} pData 
-   * @param {number} iOffset 
+   * @param {number} pFile
+   * @param {Uint8Array} pData
+   * @param {number} iOffset
    * @returns {number|Promise<number>}
    */
   jRead(pFile, pData, iOffset) {
@@ -6301,32 +6301,32 @@ var FacadeVFS = class extends Base {
     return SQLITE_IOERR_SHORT_READ;
   }
   /**
-   * @param {number} pFile 
-   * @param {Uint8Array} pData 
-   * @param {number} iOffset 
+   * @param {number} pFile
+   * @param {Uint8Array} pData
+   * @param {number} iOffset
    * @returns {number|Promise<number>}
    */
   jWrite(pFile, pData, iOffset) {
     return SQLITE_IOERR_WRITE;
   }
   /**
-   * @param {number} pFile 
-   * @param {number} size 
+   * @param {number} pFile
+   * @param {number} size
    * @returns {number|Promise<number>}
    */
   jTruncate(pFile, size) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pFile 
-   * @param {number} flags 
+   * @param {number} pFile
+   * @param {number} flags
    * @returns {number|Promise<number>}
    */
   jSync(pFile, flags) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pFile 
+   * @param {number} pFile
    * @param {DataView} pSize
    * @returns {number|Promise<number>}
    */
@@ -6334,24 +6334,24 @@ var FacadeVFS = class extends Base {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pFile 
-   * @param {number} lockType 
+   * @param {number} pFile
+   * @param {number} lockType
    * @returns {number|Promise<number>}
    */
   jLock(pFile, lockType) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pFile 
-   * @param {number} lockType 
+   * @param {number} pFile
+   * @param {number} lockType
    * @returns {number|Promise<number>}
    */
   jUnlock(pFile, lockType) {
     return SQLITE_OK;
   }
   /**
-   * @param {number} pFile 
-   * @param {DataView} pResOut 
+   * @param {number} pFile
+   * @param {DataView} pResOut
    * @returns {number|Promise<number>}
    */
   jCheckReservedLock(pFile, pResOut) {
@@ -6382,11 +6382,11 @@ var FacadeVFS = class extends Base {
     return 0;
   }
   /**
-   * @param {number} pVfs 
-   * @param {number} zName 
-   * @param {number} pFile 
-   * @param {number} flags 
-   * @param {number} pOutFlags 
+   * @param {number} pVfs
+   * @param {number} zName
+   * @param {number} pFile
+   * @param {number} flags
+   * @param {number} pOutFlags
    * @returns {number|Promise<number>}
    */
   xOpen(pVfs, zName, pFile, flags, pOutFlags) {
@@ -6396,9 +6396,9 @@ var FacadeVFS = class extends Base {
     return this.jOpen(filename, pFile, flags, pOutFlagsView);
   }
   /**
-   * @param {number} pVfs 
-   * @param {number} zName 
-   * @param {number} syncDir 
+   * @param {number} pVfs
+   * @param {number} zName
+   * @param {number} syncDir
    * @returns {number|Promise<number>}
    */
   xDelete(pVfs, zName, syncDir) {
@@ -6407,10 +6407,10 @@ var FacadeVFS = class extends Base {
     return this.jDelete(filename, syncDir);
   }
   /**
-   * @param {number} pVfs 
-   * @param {number} zName 
-   * @param {number} flags 
-   * @param {number} pResOut 
+   * @param {number} pVfs
+   * @param {number} zName
+   * @param {number} flags
+   * @param {number} pResOut
    * @returns {number|Promise<number>}
    */
   xAccess(pVfs, zName, flags, pResOut) {
@@ -6420,10 +6420,10 @@ var FacadeVFS = class extends Base {
     return this.jAccess(filename, flags, pResOutView);
   }
   /**
-   * @param {number} pVfs 
-   * @param {number} zName 
-   * @param {number} nOut 
-   * @param {number} zOut 
+   * @param {number} pVfs
+   * @param {number} zName
+   * @param {number} nOut
+   * @param {number} zOut
    * @returns {number|Promise<number>}
    */
   xFullPathname(pVfs, zName, nOut, zOut) {
@@ -6433,9 +6433,9 @@ var FacadeVFS = class extends Base {
     return this.jFullPathname(filename, zOutArray);
   }
   /**
-   * @param {number} pVfs 
-   * @param {number} nBuf 
-   * @param {number} zBuf 
+   * @param {number} pVfs
+   * @param {number} nBuf
+   * @param {number} zBuf
    * @returns {number|Promise<number>}
    */
   xGetLastError(pVfs, nBuf, zBuf) {
@@ -6444,7 +6444,7 @@ var FacadeVFS = class extends Base {
     return this.jGetLastError(zBufArray);
   }
   /**
-   * @param {number} pFile 
+   * @param {number} pFile
    * @returns {number|Promise<number>}
    */
   xClose(pFile) {
@@ -6452,11 +6452,11 @@ var FacadeVFS = class extends Base {
     return this.jClose(pFile);
   }
   /**
-   * @param {number} pFile 
-   * @param {number} pData 
-   * @param {number} iAmt 
-   * @param {number} iOffsetLo 
-   * @param {number} iOffsetHi 
+   * @param {number} pFile
+   * @param {number} pData
+   * @param {number} iAmt
+   * @param {number} iOffsetLo
+   * @param {number} iOffsetHi
    * @returns {number|Promise<number>}
    */
   xRead(pFile, pData, iAmt, iOffsetLo, iOffsetHi) {
@@ -6466,11 +6466,11 @@ var FacadeVFS = class extends Base {
     return this.jRead(pFile, pDataArray, iOffset);
   }
   /**
-   * @param {number} pFile 
-   * @param {number} pData 
-   * @param {number} iAmt 
-   * @param {number} iOffsetLo 
-   * @param {number} iOffsetHi 
+   * @param {number} pFile
+   * @param {number} pData
+   * @param {number} iAmt
+   * @param {number} iOffsetLo
+   * @param {number} iOffsetHi
    * @returns {number|Promise<number>}
    */
   xWrite(pFile, pData, iAmt, iOffsetLo, iOffsetHi) {
@@ -6480,9 +6480,9 @@ var FacadeVFS = class extends Base {
     return this.jWrite(pFile, pDataArray, iOffset);
   }
   /**
-   * @param {number} pFile 
-   * @param {number} sizeLo 
-   * @param {number} sizeHi 
+   * @param {number} pFile
+   * @param {number} sizeLo
+   * @param {number} sizeHi
    * @returns {number|Promise<number>}
    */
   xTruncate(pFile, sizeLo, sizeHi) {
@@ -6491,8 +6491,8 @@ var FacadeVFS = class extends Base {
     return this.jTruncate(pFile, size);
   }
   /**
-   * @param {number} pFile 
-   * @param {number} flags 
+   * @param {number} pFile
+   * @param {number} flags
    * @returns {number|Promise<number>}
    */
   xSync(pFile, flags) {
@@ -6500,9 +6500,9 @@ var FacadeVFS = class extends Base {
     return this.jSync(pFile, flags);
   }
   /**
-   * 
-   * @param {number} pFile 
-   * @param {number} pSize 
+   *
+   * @param {number} pFile
+   * @param {number} pSize
    * @returns {number|Promise<number>}
    */
   xFileSize(pFile, pSize) {
@@ -6511,8 +6511,8 @@ var FacadeVFS = class extends Base {
     return this.jFileSize(pFile, pSizeView);
   }
   /**
-   * @param {number} pFile 
-   * @param {number} lockType 
+   * @param {number} pFile
+   * @param {number} lockType
    * @returns {number|Promise<number>}
    */
   xLock(pFile, lockType) {
@@ -6520,8 +6520,8 @@ var FacadeVFS = class extends Base {
     return this.jLock(pFile, lockType);
   }
   /**
-   * @param {number} pFile 
-   * @param {number} lockType 
+   * @param {number} pFile
+   * @param {number} lockType
    * @returns {number|Promise<number>}
    */
   xUnlock(pFile, lockType) {
@@ -6529,8 +6529,8 @@ var FacadeVFS = class extends Base {
     return this.jUnlock(pFile, lockType);
   }
   /**
-   * @param {number} pFile 
-   * @param {number} pResOut 
+   * @param {number} pFile
+   * @param {number} pResOut
    * @returns {number|Promise<number>}
    */
   xCheckReservedLock(pFile, pResOut) {
@@ -6539,9 +6539,9 @@ var FacadeVFS = class extends Base {
     return this.jCheckReservedLock(pFile, pResOutView);
   }
   /**
-   * @param {number} pFile 
-   * @param {number} op 
-   * @param {number} pArg 
+   * @param {number} pFile
+   * @param {number} op
+   * @param {number} pArg
    * @returns {number|Promise<number>}
    */
   xFileControl(pFile, op, pArg) {
@@ -6553,7 +6553,7 @@ var FacadeVFS = class extends Base {
     return this.jFileControl(pFile, op, pArgView);
   }
   /**
-   * @param {number} pFile 
+   * @param {number} pFile
    * @returns {number|Promise<number>}
    */
   xSectorSize(pFile) {
@@ -6561,7 +6561,7 @@ var FacadeVFS = class extends Base {
     return this.jSectorSize(pFile);
   }
   /**
-   * @param {number} pFile 
+   * @param {number} pFile
    * @returns {number|Promise<number>}
    */
   xDeviceCharacteristics(pFile) {
@@ -6572,8 +6572,8 @@ var FacadeVFS = class extends Base {
    * Wrapped DataView for pointer arguments.
    * Pointers to a single value are passed using DataView. A Proxy
    * wrapper prevents use of incorrect type or endianness.
-   * @param {'Int32'|'BigInt64'} type 
-   * @param {number} byteOffset 
+   * @param {'Int32'|'BigInt64'} type
+   * @param {number} byteOffset
    * @returns {DataView}
    */
   #makeTypedDataView(type, byteOffset) {
@@ -6612,8 +6612,8 @@ var FacadeVFS = class extends Base {
     });
   }
   /**
-   * @param {number} byteOffset 
-   * @param {number} byteLength 
+   * @param {number} byteOffset
+   * @param {number} byteLength
    */
   #makeDataArray(byteOffset, byteLength) {
     let target = this._module.HEAPU8.subarray(byteOffset, byteOffset + byteLength);
@@ -6683,10 +6683,10 @@ var MemoryVFS = class _MemoryVFS extends FacadeVFS {
     }
   }
   /**
-   * @param {string?} filename 
-   * @param {number} fileId 
-   * @param {number} flags 
-   * @param {DataView} pOutFlags 
+   * @param {string?} filename
+   * @param {number} fileId
+   * @param {number} flags
+   * @param {DataView} pOutFlags
    * @returns {number|Promise<number>}
    */
   jOpen(filename, fileId, flags, pOutFlags) {
@@ -6711,7 +6711,7 @@ var MemoryVFS = class _MemoryVFS extends FacadeVFS {
     return SQLITE_OK;
   }
   /**
-   * @param {number} fileId 
+   * @param {number} fileId
    * @returns {number|Promise<number>}
    */
   jClose(fileId) {
@@ -6723,8 +6723,8 @@ var MemoryVFS = class _MemoryVFS extends FacadeVFS {
     return SQLITE_OK;
   }
   /**
-   * @param {number} fileId 
-   * @param {Uint8Array} pData 
+   * @param {number} fileId
+   * @param {Uint8Array} pData
    * @param {number} iOffset
    * @returns {number|Promise<number>}
    */
@@ -6743,8 +6743,8 @@ var MemoryVFS = class _MemoryVFS extends FacadeVFS {
     return SQLITE_OK;
   }
   /**
-   * @param {number} fileId 
-   * @param {Uint8Array} pData 
+   * @param {number} fileId
+   * @param {Uint8Array} pData
    * @param {number} iOffset
    * @returns {number|Promise<number>}
    */
@@ -6761,8 +6761,8 @@ var MemoryVFS = class _MemoryVFS extends FacadeVFS {
     return SQLITE_OK;
   }
   /**
-   * @param {number} fileId 
-   * @param {number} iSize 
+   * @param {number} fileId
+   * @param {number} iSize
    * @returns {number|Promise<number>}
    */
   jTruncate(fileId, iSize) {
@@ -6771,8 +6771,8 @@ var MemoryVFS = class _MemoryVFS extends FacadeVFS {
     return SQLITE_OK;
   }
   /**
-   * @param {number} fileId 
-   * @param {DataView} pSize64 
+   * @param {number} fileId
+   * @param {DataView} pSize64
    * @returns {number|Promise<number>}
    */
   jFileSize(fileId, pSize64) {
@@ -6781,8 +6781,8 @@ var MemoryVFS = class _MemoryVFS extends FacadeVFS {
     return SQLITE_OK;
   }
   /**
-   * @param {string} name 
-   * @param {number} syncDir 
+   * @param {string} name
+   * @param {number} syncDir
    * @returns {number|Promise<number>}
    */
   jDelete(name, syncDir) {
@@ -6792,9 +6792,9 @@ var MemoryVFS = class _MemoryVFS extends FacadeVFS {
     return SQLITE_OK;
   }
   /**
-   * @param {string} name 
-   * @param {number} flags 
-   * @param {DataView} pResOut 
+   * @param {string} name
+   * @param {number} flags
+   * @param {DataView} pResOut
    * @returns {number|Promise<number>}
    */
   jAccess(name, flags, pResOut) {
@@ -6822,25 +6822,25 @@ var MemoryAsyncVFS = class extends MemoryVFS {
     }
   }
   /**
-   * @param {string?} name 
-   * @param {number} fileId 
-   * @param {number} flags 
-   * @param {DataView} pOutFlags 
+   * @param {string?} name
+   * @param {number} fileId
+   * @param {number} flags
+   * @param {DataView} pOutFlags
    * @returns {Promise<number>}
    */
   async jOpen(name, fileId, flags, pOutFlags) {
     return super.jOpen(name, fileId, flags, pOutFlags);
   }
   /**
-   * @param {number} fileId 
+   * @param {number} fileId
    * @returns {Promise<number>}
    */
   async jClose(fileId) {
     return super.jClose(fileId);
   }
   /**
-   * @param {number} fileId 
-   * @param {Uint8Array} pData 
+   * @param {number} fileId
+   * @param {Uint8Array} pData
    * @param {number} iOffset
    * @returns {Promise<number>}
    */
@@ -6848,8 +6848,8 @@ var MemoryAsyncVFS = class extends MemoryVFS {
     return super.jRead(fileId, pData, iOffset);
   }
   /**
-   * @param {number} fileId 
-   * @param {Uint8Array} pData 
+   * @param {number} fileId
+   * @param {Uint8Array} pData
    * @param {number} iOffset
    * @returns {Promise<number>}
    */
@@ -6857,34 +6857,34 @@ var MemoryAsyncVFS = class extends MemoryVFS {
     return super.jWrite(fileId, pData, iOffset);
   }
   /**
-   * @param {number} fileId 
-   * @param {number} iSize 
+   * @param {number} fileId
+   * @param {number} iSize
    * @returns {Promise<number>}
    */
   async xTruncate(fileId, iSize) {
     return super.jTruncate(fileId, iSize);
   }
   /**
-   * @param {number} fileId 
-   * @param {DataView} pSize64 
+   * @param {number} fileId
+   * @param {DataView} pSize64
    * @returns {Promise<number>}
    */
   async jFileSize(fileId, pSize64) {
     return super.jFileSize(fileId, pSize64);
   }
   /**
-   * 
-   * @param {string} name 
-   * @param {number} syncDir 
+   *
+   * @param {string} name
+   * @param {number} syncDir
    * @returns {Promise<number>}
    */
   async jDelete(name, syncDir) {
     return super.jDelete(name, syncDir);
   }
   /**
-   * @param {string} name 
-   * @param {number} flags 
-   * @param {DataView} pResOut 
+   * @param {string} name
+   * @param {number} flags
+   * @param {DataView} pResOut
    * @returns {Promise<number>}
    */
   async jAccess(name, flags, pResOut) {
@@ -6912,8 +6912,8 @@ var WebLocksMixin = (superclass) => class extends superclass {
     }
   }
   /**
-   * @param {number} fileId 
-   * @param {number} lockType 
+   * @param {number} fileId
+   * @param {number} lockType
    * @returns {Promise<number>}
    */
   async jLock(fileId, lockType) {
@@ -6942,8 +6942,8 @@ var WebLocksMixin = (superclass) => class extends superclass {
     }
   }
   /**
-   * @param {number} fileId 
-   * @param {number} lockType 
+   * @param {number} fileId
+   * @param {number} lockType
    * @returns {Promise<number>}
    */
   async jUnlock(fileId, lockType) {
@@ -6963,8 +6963,8 @@ var WebLocksMixin = (superclass) => class extends superclass {
     }
   }
   /**
-   * @param {number} fileId 
-   * @param {DataView} pResOut 
+   * @param {number} fileId
+   * @param {DataView} pResOut
    * @returns {Promise<number>}
    */
   async jCheckReservedLock(fileId, pResOut) {
@@ -7001,9 +7001,9 @@ var WebLocksMixin = (superclass) => class extends superclass {
     return SQLITE_NOTFOUND;
   }
   /**
-   * @param {LockState} lockState 
-   * @param {number} lockType 
-   * @returns 
+   * @param {LockState} lockState
+   * @param {number} lockType
+   * @returns
    */
   async #lockExclusive(lockState, lockType) {
     if (!lockState.access) {
@@ -7016,8 +7016,8 @@ var WebLocksMixin = (superclass) => class extends superclass {
     return SQLITE_OK;
   }
   /**
-   * @param {LockState} lockState 
-   * @param {number} lockType 
+   * @param {LockState} lockState
+   * @param {number} lockType
    * @returns {number}
    */
   #unlockExclusive(lockState, lockType) {
@@ -7029,8 +7029,8 @@ var WebLocksMixin = (superclass) => class extends superclass {
     return SQLITE_OK;
   }
   /**
-   * @param {LockState} lockState 
-   * @param {DataView} pResOut 
+   * @param {LockState} lockState
+   * @param {DataView} pResOut
    * @returns {number}
    */
   #checkReservedExclusive(lockState, pResOut) {
@@ -7038,9 +7038,9 @@ var WebLocksMixin = (superclass) => class extends superclass {
     return SQLITE_OK;
   }
   /**
-   * @param {LockState} lockState 
-   * @param {number} lockType 
-   * @returns 
+   * @param {LockState} lockState
+   * @param {number} lockType
+   * @returns
    */
   async #lockShared(lockState, lockType) {
     switch (lockState.type) {
@@ -7123,9 +7123,9 @@ var WebLocksMixin = (superclass) => class extends superclass {
     return SQLITE_OK;
   }
   /**
-   * @param {LockState} lockState 
-   * @param {number} lockType 
-   * @returns 
+   * @param {LockState} lockState
+   * @param {number} lockType
+   * @returns
    */
   async #unlockShared(lockState, lockType) {
     if (lockType === SQLITE_LOCK_NONE) {
@@ -7164,8 +7164,8 @@ var WebLocksMixin = (superclass) => class extends superclass {
     return SQLITE_OK;
   }
   /**
-   * @param {LockState} lockState 
-   * @param {DataView} pResOut 
+   * @param {LockState} lockState
+   * @param {DataView} pResOut
    * @returns {Promise<number>}
    */
   async #checkReservedShared(lockState, pResOut) {
@@ -7178,9 +7178,9 @@ var WebLocksMixin = (superclass) => class extends superclass {
     return SQLITE_OK;
   }
   /**
-   * @param {LockState} lockState 
+   * @param {LockState} lockState
    * @param {'gate'|'access'|'reserved'|'hint'} name
-   * @param {LockOptions} options 
+   * @param {LockOptions} options
    * @returns {Promise<boolean>}
    */
   #acquire(lockState, name, options = {}) {
@@ -7282,10 +7282,10 @@ var IDBBatchAtomicVFS = class _IDBBatchAtomicVFS extends WebLocksMixin(FacadeVFS
     return `IDB(${this.name}):${pathname}`;
   }
   /**
-   * @param {string?} zName 
-   * @param {number} fileId 
-   * @param {number} flags 
-   * @param {DataView} pOutFlags 
+   * @param {string?} zName
+   * @param {number} fileId
+   * @param {number} flags
+   * @param {DataView} pOutFlags
    * @returns {Promise<number>}
    */
   async jOpen(zName, fileId, flags, pOutFlags) {
@@ -7314,8 +7314,8 @@ var IDBBatchAtomicVFS = class _IDBBatchAtomicVFS extends WebLocksMixin(FacadeVFS
     }
   }
   /**
-   * @param {string} zName 
-   * @param {number} syncDir 
+   * @param {string} zName
+   * @param {number} syncDir
    * @returns {Promise<number>}
    */
   async jDelete(zName, syncDir) {
@@ -7337,9 +7337,9 @@ var IDBBatchAtomicVFS = class _IDBBatchAtomicVFS extends WebLocksMixin(FacadeVFS
     }
   }
   /**
-   * @param {string} zName 
-   * @param {number} flags 
-   * @param {DataView} pResOut 
+   * @param {string} zName
+   * @param {number} flags
+   * @param {DataView} pResOut
    * @returns {Promise<number>}
    */
   async jAccess(zName, flags, pResOut) {
@@ -7355,7 +7355,7 @@ var IDBBatchAtomicVFS = class _IDBBatchAtomicVFS extends WebLocksMixin(FacadeVFS
     }
   }
   /**
-   * @param {number} fileId 
+   * @param {number} fileId
    * @returns {Promise<number>}
    */
   async jClose(fileId) {
@@ -7379,8 +7379,8 @@ var IDBBatchAtomicVFS = class _IDBBatchAtomicVFS extends WebLocksMixin(FacadeVFS
     }
   }
   /**
-   * @param {number} fileId 
-   * @param {Uint8Array} pData 
+   * @param {number} fileId
+   * @param {Uint8Array} pData
    * @param {number} iOffset
    * @returns {Promise<number>}
    */
@@ -7414,8 +7414,8 @@ var IDBBatchAtomicVFS = class _IDBBatchAtomicVFS extends WebLocksMixin(FacadeVFS
     }
   }
   /**
-   * @param {number} fileId 
-   * @param {Uint8Array} pData 
+   * @param {number} fileId
+   * @param {Uint8Array} pData
    * @param {number} iOffset
    * @returns {number}
    */
@@ -7472,8 +7472,8 @@ var IDBBatchAtomicVFS = class _IDBBatchAtomicVFS extends WebLocksMixin(FacadeVFS
     }
   }
   /**
-   * @param {number} fileId 
-   * @param {number} iSize 
+   * @param {number} fileId
+   * @param {number} iSize
    * @returns {number}
    */
   jTruncate(fileId, iSize) {
@@ -7497,8 +7497,8 @@ var IDBBatchAtomicVFS = class _IDBBatchAtomicVFS extends WebLocksMixin(FacadeVFS
     }
   }
   /**
-   * @param {number} fileId 
-   * @param {number} flags 
+   * @param {number} fileId
+   * @param {number} flags
    * @returns {Promise<number>}
    */
   async jSync(fileId, flags) {
@@ -7522,8 +7522,8 @@ var IDBBatchAtomicVFS = class _IDBBatchAtomicVFS extends WebLocksMixin(FacadeVFS
     }
   }
   /**
-   * @param {number} fileId 
-   * @param {DataView} pSize64 
+   * @param {number} fileId
+   * @param {DataView} pSize64
    * @returns {number}
    */
   jFileSize(fileId, pSize64) {
@@ -7537,8 +7537,8 @@ var IDBBatchAtomicVFS = class _IDBBatchAtomicVFS extends WebLocksMixin(FacadeVFS
     }
   }
   /**
-   * @param {number} fileId 
-   * @param {number} lockType 
+   * @param {number} fileId
+   * @param {number} lockType
    * @returns {Promise<number>}
    */
   async jLock(fileId, lockType) {
@@ -7575,8 +7575,8 @@ var IDBBatchAtomicVFS = class _IDBBatchAtomicVFS extends WebLocksMixin(FacadeVFS
     return result;
   }
   /**
-   * @param {number} fileId 
-   * @param {number} lockType 
+   * @param {number} fileId
+   * @param {number} lockType
    * @returns {Promise<number>}
    */
   async jUnlock(fileId, lockType) {
@@ -7701,7 +7701,7 @@ var IDBBatchAtomicVFS = class _IDBBatchAtomicVFS extends WebLocksMixin(FacadeVFS
     return 0 | SQLITE_IOCAP_BATCH_ATOMIC | SQLITE_IOCAP_UNDELETABLE_WHEN_OPEN;
   }
   /**
-   * @param {Uint8Array} zBuf 
+   * @param {Uint8Array} zBuf
    * @returns {number|Promise<number>}
    */
   jGetLastError(zBuf) {
@@ -7792,8 +7792,8 @@ var IDBContext = class _IDBContext {
     this.#database.close();
   }
   /**
-   * @param {(stores: Object.<string, IDBObjectStore>) => any} f 
-   * @param {'ro'|'rw'} mode 
+   * @param {(stores: Object.<string, IDBObjectStore>) => any} f
+   * @param {'ro'|'rw'} mode
    * @returns {Promise<any>}
    */
   q(f, mode = "ro", options = {}) {
@@ -7806,8 +7806,8 @@ var IDBContext = class _IDBContext {
     return this.#chain;
   }
   /**
-   * @param {(stores: Object.<string, IDBObjectStore>) => any} f 
-   * @param {IDBTransactionMode} mode 
+   * @param {(stores: Object.<string, IDBObjectStore>) => any} f
+   * @param {IDBTransactionMode} mode
    * @param {IDBTransactionOptions} options
    * @returns {Promise<any>}
    */
@@ -7859,8 +7859,8 @@ var IDBContext = class _IDBContext {
    * Object store methods that return an IDBRequest, except for cursor
    * creation, are wrapped to return a Promise. In addition, the
    * request is used internally for chaining.
-   * @param {IDBObjectStore} objectStore 
-   * @returns 
+   * @param {IDBObjectStore} objectStore
+   * @returns
    */
   proxyStoreOrIndex(objectStore) {
     return new Proxy(objectStore, {
@@ -7885,7 +7885,7 @@ var IDBContext = class _IDBContext {
     });
   }
   /**
-   * @param {boolean} durable 
+   * @param {boolean} durable
    */
   async sync(durable) {
     if (this.#chain) {
@@ -7958,6 +7958,16 @@ var Database = class {
     return result;
   }
 };
+
+globalThis.SQLite = {
+  Database,
+  IndexedDbFS: IDBBatchAtomicVFS,
+  MemoryFS: MemoryAsyncVFS,
+  SQLite,
+  SQLiteFactory: wa_sqlite_async_default3,
+  SQLiteInternal: sqlite_api_exports
+}
+
 export {
   Database,
   IDBBatchAtomicVFS as IndexedDbFS,

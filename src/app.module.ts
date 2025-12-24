@@ -13,6 +13,7 @@ import { CurrentWorkoutService } from './services/current-workout.service';
 import { CurrentWorkoutPanelService } from './services/current-workout-panel.service';
 import { StorageService } from './services/storage.service';
 import { WorkoutsService } from './services/workouts.service';
+import { SQLiteService } from './services/sqlite.service';
 
 import { BottomNavComponent } from './partials/bottom-nav/bottom-nav.component';
 import { TopNavBackComponent, TopNavComponent } from './partials/top-nav/top-nav.component';
@@ -64,10 +65,29 @@ import { ExercisePickerPageComponent } from './pages/exercise-picker/exercise-pi
     StorageService,
     WorkoutsService,
     ExerciseListService,
+    SQLiteService,
   ],
   imports: [BrowserModule, CommonModule, FormsModule, RouterModule.forRoot(routes)],
   bootstrap: [AppComponent],
 })
 export class AppModule {
-  constructor(_workerService: BackgroundWorkerService) {}
+  constructor(
+    _workerService: BackgroundWorkerService,
+    _SQLiteService: SQLiteService,
+  ) {
+    (async () => {
+      const db = _SQLiteService
+
+      await db.exec(
+        `CREATE TABLE IF NOT EXISTS test_table ("id" TEXT UNIQUE, "val" TEXT)`
+      );
+
+      await db.exec("INSERT INTO test_table (id, val) VALUES ('1', 'v1')");
+      await db.exec("INSERT INTO test_table (id, val) VALUES ('2', 'v2')");
+      await db.exec("INSERT INTO test_table (id, val) VALUES ('3', 'v3')");
+
+      const result = await db.exec("SELECT * FROM test_table");
+      console.log(result);
+    })()
+  }
 }

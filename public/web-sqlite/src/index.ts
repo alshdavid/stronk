@@ -59,7 +59,7 @@ export class Database {
 
   async exec<T>(sql: string): Promise<Array<T>> {
     const result: T[] = [];
-    
+
     await this.#sqlite3.exec(this.#database, sql, (row: any, col: any) => {
       const entry: any = {};
       for (const [i, key] of col.entries()) {
