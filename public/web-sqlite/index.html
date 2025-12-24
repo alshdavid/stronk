@@ -1,0 +1,27 @@
+<html>
+  <script type="module">
+    import { SQLite, IndexedDbFS } from "./index.js";
+
+    const sqlite = await SQLite.initialize({
+      fs: IndexedDbFS
+    });
+
+    const db = await sqlite.open("test");
+    console.log(db);
+
+    // if ((await exec(`SELECT name FROM sqlite_master WHERE type='table' AND name='test_table';`)).length) {
+
+    // }
+
+    await db.exec(
+      `CREATE TABLE IF NOT EXISTS test_table ("id" TEXT UNIQUE, "val" TEXT)`
+    );
+
+    // await exec("INSERT INTO test_table (id, val) VALUES ('1', 'v1')");
+    // await exec("INSERT INTO test_table (id, val) VALUES ('2', 'v2')");
+    // await exec("INSERT INTO test_table (id, val) VALUES ('3', 'v3')");
+
+    const result = await db.exec("SELECT * FROM test_table");
+    console.log(result);
+  </script>
+</html>
