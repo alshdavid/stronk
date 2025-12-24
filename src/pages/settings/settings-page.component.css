@@ -1,0 +1,4 @@
+.btn, .github-link {
+  display: flex;
+  margin-bottom: 12px;
+}

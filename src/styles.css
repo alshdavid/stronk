@@ -83,6 +83,10 @@ footer {
     background-color: var(--color-red-500);
   }
 
+  &.green {
+    background-color: var(--color-green-500);
+  }
+
   &.input {
     justify-content: flex-start;
     background-color: var(--color-blue-grey-850);

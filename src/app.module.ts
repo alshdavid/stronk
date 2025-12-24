@@ -21,6 +21,7 @@ import { ProfilePageComponent } from './pages/profile/profile-page.component';
 import { ProfilePageNavComponent } from './pages/profile/profile-nav.component';
 import { ExercisesPageComponent } from './pages/exercises/exercises-page.component';
 import { HistoryPageComponent } from './pages/history/history-page.component';
+import { SettingsPageComponent } from './pages/settings/settings-page.component';
 import { MeasurePageComponent } from './pages/measure/measure-page.component';
 import { WorkoutPageComponent } from './pages/workout/workout-page.component';
 import { ExercisesPageNavComponent } from './pages/exercises/exercises-nav.component';
@@ -53,6 +54,7 @@ import { ExercisePickerPageComponent } from './pages/exercise-picker/exercise-pi
     WorkoutDetailPageComponent,
     WorkoutDetailPageNavComponent,
     ExercisePickerPageComponent,
+    SettingsPageComponent,
   ],
   providers: [
     BackgroundWorkerService,
